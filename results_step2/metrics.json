@@ -1,0 +1,9 @@
+{
+  "noise_std": 0.5,
+  "classifier_params": 37106,
+  "epochs": 15,
+  "acc_clean": 99.11,
+  "acc_noisy": 88.9,
+  "acc_denoised": 96.3,
+  "improvement": 7.3999999999999915
+}

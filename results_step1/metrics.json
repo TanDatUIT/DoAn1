@@ -1,0 +1,14 @@
+{
+  "noise_std": 0.5,
+  "epochs": 50,
+  "learning_rate": 0.001,
+  "total_params": 665,
+  "final_train_loss": 0.013098106421033541,
+  "final_val_loss": 0.012868234537541866,
+  "mse_noisy": 0.11563813394006295,
+  "mse_denoised": 0.012869432580339003,
+  "psnr_noisy_db": 9.37922410119938,
+  "psnr_denoised_db": 19.18731129320362,
+  "psnr_improvement_db": 9.80808719200424,
+  "timestamp": "2026-03-28 23:13:13"
+}
