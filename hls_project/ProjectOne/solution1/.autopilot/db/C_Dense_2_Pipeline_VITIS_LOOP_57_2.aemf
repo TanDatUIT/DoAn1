@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1776192415511">
+  <ports id="1" name="out_Dense_V" type="PortType" coreName="RAM" coreId="1397508191" bitwidth="16" direction="DirInOut" iftype="IfTypeRegister" arraysize="10">
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="sext_ln813_3" type="PortType" coreId="1953060399" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="p_cast" type="PortType" coreId="1445951598" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="42" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="44" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="45" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="46" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="49" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="50" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="51" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="52" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="55" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="58" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="59" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="60" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="61" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="62" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="65" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="67" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="68" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="69" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="72" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="75" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="78" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="79" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="80" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="81" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="82" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="83" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="84" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="85" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="86" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="87" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="88" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="109" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="110" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="111" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="112" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="113" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="114" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="115" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="116" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="-62" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@ports.0"/>
+  <blocks id="14" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>for.body52</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="i" originalName="i" coreId="539764286" bitwidth="4" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="p_cast_read" coreId="539768380" bitwidth="16" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>p_cast</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="sext_ln813_3_read" coreId="1633836900" bitwidth="16" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataInputObjs>sext_ln813_3</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="p_cast_cast" rtlName="p_cast_cast_fu_90_p1" coreId="1633836900" bitwidth="25" opcode="sext" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>sdiv</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="sext_ln813_3_cast" rtlName="sext_ln813_3_cast_fu_94_p1" coreId="741488444" bitwidth="17" opcode="sext" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="i_write_ln0" coreId="741875756" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="br_ln0" coreId="1885413420" opcode="br" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <controlInputObjs>for.body52</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="37" name="_ZN8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EEC2Ei.exit30.exitStub" type="BlockType">
+    <controlInputObjs>for.body52</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="_ln0" coreId="1629498410" opcode="ret" nodeLabel="34.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="224" pipe_depth="36" RegionName="VITIS_LOOP_57_2">
+    <basic_blocks id="21" name="for.body52" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>for.body52.split</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>_ZN8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EEC2Ei.exit30.exitStub</controlOutputObjs>
+      <controlOutputObjs>for.body52.split</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="i_6" lineNumber="57" originalName="i" fileName="pipeline/C_Dense.cpp" fileDirectory=".." coreId="1633836900" contextFuncName="C_Dense_2" bitwidth="4" opcode="load" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Dense.cpp" linenumber="57" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_Dense_2"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="icmp_ln57" lineNumber="57" fileName="pipeline/C_Dense.cpp" fileDirectory=".." rtlName="icmp_ln57_fu_106_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="C_Dense_2" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.72" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Dense.cpp" linenumber="57" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_Dense_2"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="add_ln57" lineNumber="57" fileName="pipeline/C_Dense.cpp" fileDirectory=".." rtlName="add_ln57_fu_112_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_Dense_2" bitwidth="4" opcode="add" m_display="0" m_delay="0.79" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Dense.cpp" linenumber="57" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_Dense_2"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="br_ln57" lineNumber="57" fileName="pipeline/C_Dense.cpp" fileDirectory=".." coreId="741941292" contextFuncName="C_Dense_2" opcode="br" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Dense.cpp" linenumber="57" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_Dense_2"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>for.body52.split</controlInputObjs>
+        <controlInputObjs>_ZN8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EEC2Ei.exit30.exitStub</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="pipeline/C_Dense.cpp">
+        <validLinenumbers>57</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="35" name="for.body52.split" type="BlockType">
+      <controlInputObjs>for.body52</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.body52</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="i_8_cast" lineNumber="57" fileName="pipeline/C_Dense.cpp" fileDirectory=".." rtlName="i_8_cast_fu_118_p1" coreId="741749820" contextFuncName="C_Dense_2" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Dense.cpp" linenumber="57" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_Dense_2"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="out_Dense_V_addr" lineNumber="813" fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." coreId="1633836900" contextFuncName="operator_assign_16_8_true_AP_TRN_AP_WRAP_0" bitwidth="4" opcode="getelementptr" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" linenumber="813" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="operator=&amp;lt;16, 8, true, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+        <dataInputObjs>out_Dense_V</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>out_Dense_V</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="lhs" lineNumber="813" originalName="lhs" fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="83" contextFuncName="operator_assign_16_8_true_AP_TRN_AP_WRAP_0" bitwidth="16" opcode="load" nodeLatency="1" m_display="0" m_delay="0.67" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" linenumber="813" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="operator=&amp;lt;16, 8, true, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>sext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="sext_ln813" lineNumber="813" fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." rtlName="sext_ln813_fu_128_p1" coreId="942743596" contextFuncName="operator_assign_16_8_true_AP_TRN_AP_WRAP_0" bitwidth="17" opcode="sext" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" linenumber="813" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="operator=&amp;lt;16, 8, true, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="ret_V" lineNumber="1348" originalName="ret.V" fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." rtlName="ret_V_fu_132_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="operator_sub_16_8_true_AP_TRN_AP_WRAP_0" bitwidth="17" opcode="sub" nodeLabel="1.0" m_display="0" m_delay="0.85" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" linenumber="1348" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="operator-&amp;lt;16, 8, true, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+        <dataInputObjs>sext</dataInputObjs>
+        <dataInputObjs>sext</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="t" lineNumber="1190" originalName="t" fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\hls_math.h" fileDirectory=".." coreId="539764286" contextFuncName="exp_17_9_s" bitwidth="17" opcode="call" nodeLabel="1.0" nodeLatency="5" m_display="0" m_delay="1.23" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\hls_math.h" linenumber="1190" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="exp&amp;lt;17, 9&amp;gt;"/>
+        <dataInputObjs>sub</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <constName>exp_17_9_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="t_1" lineNumber="838" originalName="t" fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." rtlName="grp_fu_145_p0" coreId="741684796" contextFuncName="operator_assign_17_9_true_AP_TRN_AP_WRAP_0" bitwidth="25" opcode="bitconcatenate" nodeLabel="7.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" linenumber="838" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="operator=&amp;lt;17, 9, true, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>sdiv</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="sdiv_ln1303" lineNumber="1303" fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." rtlName="sdiv_25ns_16s_16_29_1_U339" coreName="Divider" implIndex="auto" control="no" opType="sdiv" coreId="6" contextFuncName="operator_div_16_8_true_AP_TRN_AP_WRAP_0" bitwidth="16" opcode="sdiv" nodeLabel="7.0" nodeLatency="28" m_display="0" m_delay="1.49" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" linenumber="1303" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="operator/&amp;lt;16, 8, true, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataInputObjs>sext</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="trunc_ln813" lineNumber="813" fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." rtlName="out_Dense_V_d0" coreId="741619260" contextFuncName="operator_assign_26_18_true_AP_TRN_AP_WRAP_0" bitwidth="16" opcode="trunc" nodeLabel="35.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h" linenumber="813" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="operator=&amp;lt;26, 18, true, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+        <dataInputObjs>sdiv</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="out_Dense_V_addr_write_ln58" lineNumber="58" fileName="pipeline/C_Dense.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="83" contextFuncName="C_Dense_2" opcode="store" nodeLabel="35.0" m_display="0" m_delay="0.67" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Dense.cpp" linenumber="58" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_Dense_2"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="i_write_ln57" lineNumber="57" fileName="pipeline/C_Dense.cpp" fileDirectory=".." coreId="1633836900" contextFuncName="C_Dense_2" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Dense.cpp" linenumber="57" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_Dense_2"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="br_ln57" lineNumber="57" fileName="pipeline/C_Dense.cpp" fileDirectory=".." coreId="1629498406" contextFuncName="C_Dense_2" opcode="br" nodeLabel="35.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Dense.cpp" linenumber="57" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_Dense_2"/>
+        <controlInputObjs>for.body52</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="pipeline/C_Dense.cpp">
+        <validLinenumbers>57</validLinenumbers>
+        <validLinenumbers>58</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\hls_math.h">
+        <validLinenumbers>1190</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h">
+        <validLinenumbers>813</validLinenumbers>
+        <validLinenumbers>1348</validLinenumbers>
+        <validLinenumbers>838</validLinenumbers>
+        <validLinenumbers>1303</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <ScheduleInfo time="11"/>
+  <ScheduleInfo time="12"/>
+  <ScheduleInfo time="13"/>
+  <ScheduleInfo time="14"/>
+  <ScheduleInfo time="15"/>
+  <ScheduleInfo time="16"/>
+  <ScheduleInfo time="17"/>
+  <ScheduleInfo time="18"/>
+  <ScheduleInfo time="19"/>
+  <ScheduleInfo time="20"/>
+  <ScheduleInfo time="21"/>
+  <ScheduleInfo time="22"/>
+  <ScheduleInfo time="23"/>
+  <ScheduleInfo time="24"/>
+  <ScheduleInfo time="25"/>
+  <ScheduleInfo time="26"/>
+  <ScheduleInfo time="27"/>
+  <ScheduleInfo time="28"/>
+  <ScheduleInfo time="29"/>
+  <ScheduleInfo time="30"/>
+  <ScheduleInfo time="31"/>
+  <ScheduleInfo time="32"/>
+  <ScheduleInfo time="33"/>
+  <ScheduleInfo time="34"/>
+  <ScheduleInfo time="35"/>
+  <regnodes realName="icmp_ln57_reg_172">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="out_Dense_V_addr_reg_176">
+    <nodeIds>24</nodeIds>
+  </regnodes>
+  <regnodes realName="p_cast_cast_reg_162">
+    <nodeIds>10</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_155">
+    <nodeIds>7</nodeIds>
+  </regnodes>
+  <regnodes realName="sext_ln813_3_cast_reg_167">
+    <nodeIds>11</nodeIds>
+  </regnodes>
+  <regnodes realName="t_reg_182">
+    <nodeIds>28</nodeIds>
+  </regnodes>
+  <regnodes realName="t_1_reg_187">
+    <nodeIds>29</nodeIds>
+  </regnodes>
+  <expressionNodes realName="i_fu_46">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln813_3_cast_fu_94">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_8_cast_fu_118">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln813_fu_128">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ret_V_fu_132">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_cast_cast_fu_90">
+    <nodeIds>10</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="out_Dense_V_addr_gep_fu_62">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln813_fu_150">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln57_fu_106">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln57_fu_112">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="t_1_fu_138">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_exp_17_9_s_fu_79">
+    <nodeIds>28</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_145">
+    <nodeIds>30</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="i_6_load_fu_103">
+    <nodeIds>15</nodeIds>
+  </ioNodes>
+  <ioNodes realName="sext_ln813_3_read_read_fu_56">
+    <nodeIds>9</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln57_store_fu_123">
+    <nodeIds>33</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_cast_read_read_fu_50">
+    <nodeIds>8</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_98">
+    <nodeIds>12</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="exp_x_msb_1_table_V" portID="100">
+    <nodeIds>28</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="exp_x_msb_2_m_1_table_V" portID="100">
+    <nodeIds>28</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="f_x_lsb_table_V" portID="100">
+    <nodeIds>28</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="out_Dense_V">
+    <nodeIds>32</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="out_Dense_V" portID="1">
+    <nodeIds>25</nodeIds>
+  </memoryPorts>
+  <ioPorts name="out_Dense_V(p0)">
+    <contents name="store">
+      <nodeIds>32</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out_Dense_V(p1)">
+    <contents name="load">
+      <nodeIds>25</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_cast">
+    <contents name="read">
+      <nodeIds>8</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="sext_ln813_3">
+    <contents name="read">
+      <nodeIds>9</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="2" latency="2"/>
+      <operations id="33" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="25" stage="1" latency="2"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="6" latency="6"/>
+    </states>
+    <states id="3">
+      <operations id="28" stage="5" latency="6"/>
+    </states>
+    <states id="4">
+      <operations id="28" stage="4" latency="6"/>
+    </states>
+    <states id="5">
+      <operations id="28" stage="3" latency="6"/>
+    </states>
+    <states id="6">
+      <operations id="28" stage="2" latency="6"/>
+    </states>
+    <states id="7">
+      <operations id="28" stage="1" latency="6"/>
+    </states>
+    <states id="8">
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="29" latency="29"/>
+    </states>
+    <states id="9">
+      <operations id="30" stage="28" latency="29"/>
+    </states>
+    <states id="10">
+      <operations id="30" stage="27" latency="29"/>
+    </states>
+    <states id="11">
+      <operations id="30" stage="26" latency="29"/>
+    </states>
+    <states id="12">
+      <operations id="30" stage="25" latency="29"/>
+    </states>
+    <states id="13">
+      <operations id="30" stage="24" latency="29"/>
+    </states>
+    <states id="14">
+      <operations id="30" stage="23" latency="29"/>
+    </states>
+    <states id="15">
+      <operations id="30" stage="22" latency="29"/>
+    </states>
+    <states id="16">
+      <operations id="30" stage="21" latency="29"/>
+    </states>
+    <states id="17">
+      <operations id="30" stage="20" latency="29"/>
+    </states>
+    <states id="18">
+      <operations id="30" stage="19" latency="29"/>
+    </states>
+    <states id="19">
+      <operations id="30" stage="18" latency="29"/>
+    </states>
+    <states id="20">
+      <operations id="30" stage="17" latency="29"/>
+    </states>
+    <states id="21">
+      <operations id="30" stage="16" latency="29"/>
+    </states>
+    <states id="22">
+      <operations id="30" stage="15" latency="29"/>
+    </states>
+    <states id="23">
+      <operations id="30" stage="14" latency="29"/>
+    </states>
+    <states id="24">
+      <operations id="30" stage="13" latency="29"/>
+    </states>
+    <states id="25">
+      <operations id="30" stage="12" latency="29"/>
+    </states>
+    <states id="26">
+      <operations id="30" stage="11" latency="29"/>
+    </states>
+    <states id="27">
+      <operations id="30" stage="10" latency="29"/>
+    </states>
+    <states id="28">
+      <operations id="30" stage="9" latency="29"/>
+    </states>
+    <states id="29">
+      <operations id="30" stage="8" latency="29"/>
+    </states>
+    <states id="30">
+      <operations id="30" stage="7" latency="29"/>
+    </states>
+    <states id="31">
+      <operations id="30" stage="6" latency="29"/>
+    </states>
+    <states id="32">
+      <operations id="30" stage="5" latency="29"/>
+    </states>
+    <states id="33">
+      <operations id="30" stage="4" latency="29"/>
+    </states>
+    <states id="34">
+      <operations id="30" stage="3" latency="29"/>
+    </states>
+    <states id="35">
+      <operations id="30" stage="2" latency="29"/>
+      <operations id="36" stage="1" latency="1"/>
+    </states>
+    <states id="36">
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="29"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+    </states>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="11" outState="12">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="12" outState="13">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="13" outState="14">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="14" outState="15">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="15" outState="16">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="16" outState="17">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="17" outState="18">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="18" outState="19">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="19" outState="20">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="20" outState="21">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="21" outState="22">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="22" outState="23">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="23" outState="24">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="24" outState="25">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="25" outState="26">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="26" outState="27">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="27" outState="28">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="28" outState="29">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="29" outState="30">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="30" outState="31">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="31" outState="32">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="32" outState="33">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="33" outState="34">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="34" outState="35">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="35" outState="36">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="C_Dense_2_Pipeline_VITIS_LOOP_57_2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="46" mMaxLatency="46">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>14</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_57_2" mII="1" mDepth="36" mMinTripCount="10" mMaxTripCount="10" mMinLatency="44" mMaxLatency="44" mType="1">
+      <basicBlocks>21</basicBlocks>
+      <basicBlocks>35</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>37</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

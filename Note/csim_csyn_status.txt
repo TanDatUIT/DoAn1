@@ -1,0 +1,107 @@
+================================================================
+TÌNH TRẠNG C SIM & C SYNTHESIS — Đồ án 1
+Ngày: 15/04/2026
+================================================================
+
+PROJECT: D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\ProjectOne
+SOLUTION: solution1
+TARGET DEVICE: xck26-sfvc784-2LV-c (KV260)
+TOOL: Vitis HLS 2022.2
+
+================================================================
+CẤU TRÚC PIPELINE
+================================================================
+
+Noisy image (28x28) → [Denoiser] → Clean image → [Classifier] → Digit (0-9)
+
+- Top function : inference_top(input[784], digit*, denoiser_w[665], classifier_w[5738])
+- Denoiser     : D_CNN — Autoencoder khử nhiễu, 665 params, ap_fixed<16,8>
+- Classifier   : C_CNN — LeNet-lite, 5738 params, ap_fixed<16,8>
+- Weights từ   : Weights_denoiser.txt (665 giá trị), Weights_classifier.txt (5738 giá trị)
+
+================================================================
+C SIMULATION — KẾT QUẢ
+================================================================
+
+Trạng thái : PASS (0 errors)
+Testbench  : tb_inference.cpp — 50 ảnh MNIST nhiễu (Gaussian σ=0.5)
+Accuracy   : 48/50 = 96.00%
+
+  Ảnh sai:
+  - [16] label=9, pred=4  (FAIL)
+  - [47] label=2, pred=6  (FAIL)
+
+Nhận xét: Accuracy fixed-point (96%) ≈ Keras float32 (96.80%) → mất mát không đáng kể.
+
+================================================================
+C SYNTHESIS — KẾT QUẢ
+================================================================
+
+---- TIMING ----
+  Clock target   : 10.00 ns (100 MHz)
+  Clock estimated: 7.30 ns  (~137 MHz) ✓ ĐẠT
+
+---- LATENCY ----
+  Module          | Cycles (max) | Thời gian (100 MHz)
+  ---------------|--------------|---------------------
+  D_CNN (Denoiser)| 511,423      | 5.11 ms
+  C_CNN (Classifier)| 164,087    | 1.64 ms
+  inference_top   | 675,514      | 6.76 ms/ảnh
+
+  Interval = Latency → không có pipeline → ~148 fps throughput
+  Chữ đỏ ở interval: cảnh báo throughput thấp, KHÔNG phải lỗi.
+
+---- RESOURCE (KV260) ----
+  Resource  | Dùng  | Available | %
+  ----------|-------|-----------|----
+  LUT       | 34,399| 117,120   | 29% ✓
+  DSP       | 200   | 1,248     | 16% ✓
+  BRAM_18K  | 61    | 288       | 21% ✓
+  FF        | 18,976| 234,240   |  8% ✓
+  URAM      | 0     | 64        |  0% ✓
+
+  Nhận xét: Tất cả resource dưới 30%, thoải mái để Export IP.
+
+---- INTERFACE ----
+  - s_axi_control   : AXI4-Lite — điều khiển start/done/idle
+  - s_axi_control_r : AXI4-Lite — truyền scalar params (digit output)
+  - m_axi_gmem0     : AXI4 Master — đọc input image
+  - m_axi_gmem1     : AXI4 Master — đọc weights (denoiser + classifier)
+
+================================================================
+SOURCE FILES (pipeline/)
+================================================================
+
+  common.h            — typedef fxp = ap_fixed<16,8>, include guards
+  D_CNN.h / D_CNN.cpp — Denoiser top function
+  D_Conv.h / D_Conv.cpp — Conv layers của Denoiser (có sigmoid fixed)
+  D_Pool.h / D_Pool.cpp — MaxPool + UpSampling2D của Denoiser
+  C_CNN.h / C_CNN.cpp — Classifier top function
+  C_Conv.h / C_Conv.cpp — Conv layers của Classifier
+  C_Pool.h / C_Pool.cpp — MaxPool + Flatten của Classifier
+  C_Dense.h / C_Dense.cpp — Dense layers + argmax của Classifier
+  inference_top.h / inference_top.cpp — Top function HLS
+  tb_inference.cpp    — Testbench C-Sim
+
+================================================================
+CÁC BUG ĐÃ FIX (Py2C artifacts)
+================================================================
+
+1. Denoiser CNN.h/cpp: OutModel0[(1,28,28)] → OutModel0[784]
+2. Denoiser CNN.cpp: thiếu vòng lặp copy conv4 → OutModel0
+3. D_Conv.cpp sigmoid: exp(ap_fixed) ambiguous → cast double trước
+4. C_Dense.cpp: output_Dense0 → output_Dense_0 (typo)
+5. C_Dense.cpp: #include <hls_math.h> nằm giữa file → chuyển vào common.h
+6. typedef ap_fixed<16,8> fxp bị khai báo lại nhiều lần → tập trung vào common.h
+
+================================================================
+BƯỚC TIẾP THEO
+================================================================
+
+[x] Bước 1: Train Denoiser (PSNR 18.89 dB)
+[x] Bước 2: Train Classifier (Acc 96.80%)
+[x] Bước 3: Py2C → C++
+[x] Bước 4: C-Sim (96% accuracy, 50 ảnh)
+[x] Bước 5: C Synthesis (timing OK, resource OK)
+[ ] Bước 6: Export RTL → IP Catalog → Vivado Block Design
+[ ] Bước 7: SoC KV260 integration (PS software + demo)

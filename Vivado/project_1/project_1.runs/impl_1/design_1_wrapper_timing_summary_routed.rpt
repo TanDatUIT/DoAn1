@@ -1,0 +1,1586 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date              : Tue Apr 21 15:41:16 2026
+| Host              : tandatASUS running 64-bit major release  (build 9200)
+| Command           : report_timing_summary -max_paths 10 -report_unconstrained -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation
+| Design            : design_1_wrapper
+| Device            : xck26-sfvc784
+| Speed File        : -2LV  PRODUCTION 1.30 05-15-2022
+| Temperature Grade : C
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (0)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (0)
+-------------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      5.584        0.000                      0                 1588        0.031        0.000                      0                 1588        3.656        0.000                       0                   565  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock     Waveform(ns)       Period(ns)      Frequency(MHz)
+-----     ------------       ----------      --------------
+clk_pl_0  {0.000 5.156}      10.312          96.974          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_pl_0            5.584        0.000                      0                 1588        0.031        0.000                      0                 1588        3.656        0.000                       0                   565  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                      clk_pl_0      
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_pl_0
+  To Clock:  clk_pl_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        5.584ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.031ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.656ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             5.584ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[103]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.461ns  (logic 1.428ns (32.013%)  route 3.033ns (67.987%))
+  Logic Levels:           5  (LUT5=1 LUT6=4)
+  Clock Path Skew:        -0.028ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.901ns = ( 12.213 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.152ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.685ns (routing 0.702ns, distribution 0.983ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.269     5.768    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.any_aid_match__6
+    SLICE_X3Y186         LUT5 (Prop_E6LUT_SLICEL_I3_O)
+                                                      0.152     5.920 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_target[49]_i_1/O
+                         net (fo=17, routed)          0.622     6.542    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.cmd_push_6
+    SLICE_X4Y181         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[103]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.685    12.213    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X4Y181         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[103]/C
+                         clock pessimism              0.152    12.365    
+                         clock uncertainty           -0.159    12.206    
+    SLICE_X4Y181         FDRE (Setup_HFF_SLICEM_C_CE)
+                                                     -0.081    12.125    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[103]
+  -------------------------------------------------------------------
+                         required time                         12.125    
+                         arrival time                          -6.542    
+  -------------------------------------------------------------------
+                         slack                                  5.584    
+
+Slack (MET) :             5.599ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[56]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.352ns  (logic 1.414ns (32.493%)  route 2.938ns (67.507%))
+  Logic Levels:           5  (LUT6=5)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.842ns = ( 12.154 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.117ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.626ns (routing 0.702ns, distribution 0.924ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.446     5.945    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/gen_multi_thread.any_aid_match__6
+    SLICE_X2Y181         LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.138     6.083 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/gen_multi_thread.gen_thread_loop[7].active_cnt[59]_i_1/O
+                         net (fo=4, routed)           0.349     6.433    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst_n_15
+    SLICE_X2Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[56]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.626    12.154    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X2Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[56]/C
+                         clock pessimism              0.117    12.271    
+                         clock uncertainty           -0.159    12.112    
+    SLICE_X2Y179         FDRE (Setup_DFF_SLICEM_C_CE)
+                                                     -0.080    12.032    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[56]
+  -------------------------------------------------------------------
+                         required time                         12.032    
+                         arrival time                          -6.433    
+  -------------------------------------------------------------------
+                         slack                                  5.599    
+
+Slack (MET) :             5.599ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[57]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.352ns  (logic 1.414ns (32.493%)  route 2.938ns (67.507%))
+  Logic Levels:           5  (LUT6=5)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.842ns = ( 12.154 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.117ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.626ns (routing 0.702ns, distribution 0.924ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.446     5.945    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/gen_multi_thread.any_aid_match__6
+    SLICE_X2Y181         LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.138     6.083 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/gen_multi_thread.gen_thread_loop[7].active_cnt[59]_i_1/O
+                         net (fo=4, routed)           0.349     6.433    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst_n_15
+    SLICE_X2Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[57]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.626    12.154    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X2Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[57]/C
+                         clock pessimism              0.117    12.271    
+                         clock uncertainty           -0.159    12.112    
+    SLICE_X2Y179         FDRE (Setup_BFF_SLICEM_C_CE)
+                                                     -0.080    12.032    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[57]
+  -------------------------------------------------------------------
+                         required time                         12.032    
+                         arrival time                          -6.433    
+  -------------------------------------------------------------------
+                         slack                                  5.599    
+
+Slack (MET) :             5.599ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[58]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.353ns  (logic 1.414ns (32.486%)  route 2.939ns (67.514%))
+  Logic Levels:           5  (LUT6=5)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.842ns = ( 12.154 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.117ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.626ns (routing 0.702ns, distribution 0.924ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.446     5.945    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/gen_multi_thread.any_aid_match__6
+    SLICE_X2Y181         LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.138     6.083 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/gen_multi_thread.gen_thread_loop[7].active_cnt[59]_i_1/O
+                         net (fo=4, routed)           0.350     6.434    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst_n_15
+    SLICE_X2Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[58]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.626    12.154    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X2Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[58]/C
+                         clock pessimism              0.117    12.271    
+                         clock uncertainty           -0.159    12.112    
+    SLICE_X2Y179         FDRE (Setup_DFF2_SLICEM_C_CE)
+                                                     -0.079    12.033    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[58]
+  -------------------------------------------------------------------
+                         required time                         12.033    
+                         arrival time                          -6.434    
+  -------------------------------------------------------------------
+                         slack                                  5.599    
+
+Slack (MET) :             5.599ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[59]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.352ns  (logic 1.414ns (32.493%)  route 2.938ns (67.507%))
+  Logic Levels:           5  (LUT6=5)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.842ns = ( 12.154 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.117ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.626ns (routing 0.702ns, distribution 0.924ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.446     5.945    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/gen_multi_thread.any_aid_match__6
+    SLICE_X2Y181         LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.138     6.083 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/gen_multi_thread.gen_thread_loop[7].active_cnt[59]_i_1/O
+                         net (fo=4, routed)           0.349     6.433    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst_n_15
+    SLICE_X2Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[59]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.626    12.154    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X2Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[59]/C
+                         clock pessimism              0.117    12.271    
+                         clock uncertainty           -0.159    12.112    
+    SLICE_X2Y179         FDRE (Setup_CFF_SLICEM_C_CE)
+                                                     -0.080    12.032    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_cnt_reg[59]
+  -------------------------------------------------------------------
+                         required time                         12.032    
+                         arrival time                          -6.433    
+  -------------------------------------------------------------------
+                         slack                                  5.599    
+
+Slack (MET) :             5.600ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[25]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.351ns  (logic 1.332ns (30.611%)  route 3.019ns (69.389%))
+  Logic Levels:           5  (LUT5=1 LUT6=4)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.842ns = ( 12.154 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.117ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.626ns (routing 0.702ns, distribution 0.924ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.263     5.763    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.any_aid_match__6
+    SLICE_X2Y185         LUT5 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.056     5.819 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_target[9]_i_1/O
+                         net (fo=17, routed)          0.614     6.432    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.cmd_push_1
+    SLICE_X1Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[25]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.626    12.154    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X1Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[25]/C
+                         clock pessimism              0.117    12.271    
+                         clock uncertainty           -0.159    12.112    
+    SLICE_X1Y179         FDRE (Setup_DFF_SLICEM_C_CE)
+                                                     -0.080    12.032    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[25]
+  -------------------------------------------------------------------
+                         required time                         12.032    
+                         arrival time                          -6.432    
+  -------------------------------------------------------------------
+                         slack                                  5.600    
+
+Slack (MET) :             5.600ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[26]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.351ns  (logic 1.332ns (30.611%)  route 3.019ns (69.389%))
+  Logic Levels:           5  (LUT5=1 LUT6=4)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.842ns = ( 12.154 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.117ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.626ns (routing 0.702ns, distribution 0.924ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.263     5.763    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.any_aid_match__6
+    SLICE_X2Y185         LUT5 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.056     5.819 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_target[9]_i_1/O
+                         net (fo=17, routed)          0.614     6.432    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.cmd_push_1
+    SLICE_X1Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[26]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.626    12.154    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X1Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[26]/C
+                         clock pessimism              0.117    12.271    
+                         clock uncertainty           -0.159    12.112    
+    SLICE_X1Y179         FDRE (Setup_CFF_SLICEM_C_CE)
+                                                     -0.080    12.032    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[26]
+  -------------------------------------------------------------------
+                         required time                         12.032    
+                         arrival time                          -6.432    
+  -------------------------------------------------------------------
+                         slack                                  5.600    
+
+Slack (MET) :             5.600ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[27]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.351ns  (logic 1.332ns (30.611%)  route 3.019ns (69.389%))
+  Logic Levels:           5  (LUT5=1 LUT6=4)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.842ns = ( 12.154 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.117ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.626ns (routing 0.702ns, distribution 0.924ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.263     5.763    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.any_aid_match__6
+    SLICE_X2Y185         LUT5 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.056     5.819 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_target[9]_i_1/O
+                         net (fo=17, routed)          0.614     6.432    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.cmd_push_1
+    SLICE_X1Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[27]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.626    12.154    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X1Y179         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[27]/C
+                         clock pessimism              0.117    12.271    
+                         clock uncertainty           -0.159    12.112    
+    SLICE_X1Y179         FDRE (Setup_BFF_SLICEM_C_CE)
+                                                     -0.080    12.032    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_id_reg[27]
+  -------------------------------------------------------------------
+                         required time                         12.032    
+                         arrival time                          -6.432    
+  -------------------------------------------------------------------
+                         slack                                  5.600    
+
+Slack (MET) :             5.626ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[102]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.413ns  (logic 1.428ns (32.361%)  route 2.985ns (67.639%))
+  Logic Levels:           5  (LUT5=1 LUT6=4)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.895ns = ( 12.207 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.152ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.679ns (routing 0.702ns, distribution 0.977ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.269     5.768    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.any_aid_match__6
+    SLICE_X3Y186         LUT5 (Prop_E6LUT_SLICEL_I3_O)
+                                                      0.152     5.920 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_target[49]_i_1/O
+                         net (fo=17, routed)          0.574     6.494    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.cmd_push_6
+    SLICE_X4Y182         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[102]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.679    12.207    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X4Y182         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[102]/C
+                         clock pessimism              0.152    12.359    
+                         clock uncertainty           -0.159    12.200    
+    SLICE_X4Y182         FDRE (Setup_HFF2_SLICEM_C_CE)
+                                                     -0.080    12.120    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[102]
+  -------------------------------------------------------------------
+                         required time                         12.120    
+                         arrival time                          -6.494    
+  -------------------------------------------------------------------
+                         slack                                  5.626    
+
+Slack (MET) :             5.626ns  (required time - arrival time)
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[104]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.312ns  (clk_pl_0 rise@10.312ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        4.413ns  (logic 1.428ns (32.361%)  route 2.985ns (67.639%))
+  Logic Levels:           5  (LUT5=1 LUT6=4)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.895ns = ( 12.207 - 10.312 ) 
+    Source Clock Delay      (SCD):    2.081ns
+    Clock Pessimism Removal (CPR):    0.152ns
+  Clock Uncertainty:      0.159ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.814ns (routing 0.768ns, distribution 1.046ns)
+  Clock Net Delay (Destination): 1.679ns (routing 0.702ns, distribution 0.977ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.814     2.081    design_1_i/zynq_ultra_ps_e_0/inst/maxihpm0_lpd_aclk
+    PS8_X0Y0             PS8                                          r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_MAXIGP2ACLK_MAXIGP2ARID[10])
+                                                      0.682     2.763 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ARID[10]
+                         net (fo=17, routed)          1.490     4.253    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_axi_arid[10]
+    SLICE_X2Y182         LUT6 (Prop_F6LUT_SLICEM_I5_O)
+                                                      0.080     4.333 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8/O
+                         net (fo=2, routed)           0.191     4.525    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_8_n_0
+    SLICE_X4Y183         LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.226     4.751 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5/O
+                         net (fo=3, routed)           0.214     4.965    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[5].active_target[41]_i_5_n_0
+    SLICE_X3Y184         LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.136     5.101 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8/O
+                         net (fo=7, routed)           0.246     5.347    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_8_n_0
+    SLICE_X0Y184         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.152     5.499 f  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[7].active_target[57]_i_5/O
+                         net (fo=24, routed)          0.269     5.768    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.any_aid_match__6
+    SLICE_X3Y186         LUT5 (Prop_E6LUT_SLICEL_I3_O)
+                                                      0.152     5.920 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_target[49]_i_1/O
+                         net (fo=17, routed)          0.574     6.494    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.cmd_push_6
+    SLICE_X4Y182         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[104]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.312    10.312 r  
+    PS8_X0Y0             PS8                          0.000    10.312 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.493    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.528 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.679    12.207    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/aclk
+    SLICE_X4Y182         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[104]/C
+                         clock pessimism              0.152    12.359    
+                         clock uncertainty           -0.159    12.200    
+    SLICE_X4Y182         FDRE (Setup_GFF2_SLICEM_C_CE)
+                                                     -0.080    12.120    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[6].active_id_reg[104]
+  -------------------------------------------------------------------
+                         required time                         12.120    
+                         arrival time                          -6.494    
+  -------------------------------------------------------------------
+                         slack                                  5.626    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.252ns  (logic 0.112ns (44.444%)  route 0.140ns (55.556%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.120ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.173ns
+    Source Clock Delay      (SCD):    1.900ns
+    Clock Pessimism Removal (CPR):    0.152ns
+  Clock Net Delay (Source):      1.684ns (routing 0.702ns, distribution 0.982ns)
+  Clock Net Delay (Destination): 1.906ns (routing 0.768ns, distribution 1.138ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.684     1.900    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/aclk
+    SLICE_X4Y185         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y185         FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.112     2.012 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[12]/Q
+                         net (fo=1, routed)           0.140     2.152    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt_reg[7]_0[12]
+    SLICE_X3Y185         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.906     2.173    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X3Y185         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[12]/C
+                         clock pessimism             -0.152     2.021    
+    SLICE_X3Y185         FDRE (Hold_EFF_SLICEL_C_D)
+                                                      0.101     2.122    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -2.122    
+                         arrival time                           2.152    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.048ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[43]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.242ns  (logic 0.112ns (46.281%)  route 0.130ns (53.719%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.092ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.149ns
+    Source Clock Delay      (SCD):    1.906ns
+    Clock Pessimism Removal (CPR):    0.152ns
+  Clock Net Delay (Source):      1.690ns (routing 0.702ns, distribution 0.988ns)
+  Clock Net Delay (Destination): 1.882ns (routing 0.768ns, distribution 1.114ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.690     1.906    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X3Y181         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y181         FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.112     2.018 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[8]/Q
+                         net (fo=2, routed)           0.130     2.148    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[50]_0[8]
+    SLICE_X4Y180         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[43]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.882     2.149    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/aclk
+    SLICE_X4Y180         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[43]/C
+                         clock pessimism             -0.152     1.997    
+    SLICE_X4Y180         FDRE (Hold_GFF2_SLICEM_C_D)
+                                                      0.102     2.099    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[43]
+  -------------------------------------------------------------------
+                         required time                         -2.099    
+                         arrival time                           2.148    
+  -------------------------------------------------------------------
+                         slack                                  0.048    
+
+Slack (MET) :             0.055ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.171ns  (logic 0.112ns (65.497%)  route 0.059ns (34.503%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.129ns
+    Source Clock Delay      (SCD):    1.891ns
+    Clock Pessimism Removal (CPR):    0.225ns
+  Clock Net Delay (Source):      1.675ns (routing 0.702ns, distribution 0.973ns)
+  Clock Net Delay (Destination): 1.862ns (routing 0.768ns, distribution 1.094ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.675     1.891    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/aclk
+    SLICE_X0Y181         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y181         FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.112     2.003 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[5]/Q
+                         net (fo=1, routed)           0.059     2.062    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt_reg[7]_0[5]
+    SLICE_X0Y181         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.862     2.129    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X0Y181         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[5]/C
+                         clock pessimism             -0.225     1.904    
+    SLICE_X0Y181         FDRE (Hold_HFF2_SLICEL_C_D)
+                                                      0.103     2.007    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -2.007    
+                         arrival time                           2.062    
+  -------------------------------------------------------------------
+                         slack                                  0.055    
+
+Slack (MET) :             0.064ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.223ns  (logic 0.113ns (50.673%)  route 0.110ns (49.327%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.057ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.150ns
+    Source Clock Delay      (SCD):    1.887ns
+    Clock Pessimism Removal (CPR):    0.206ns
+  Clock Net Delay (Source):      1.671ns (routing 0.702ns, distribution 0.969ns)
+  Clock Net Delay (Destination): 1.883ns (routing 0.768ns, distribution 1.115ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.671     1.887    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/aclk
+    SLICE_X1Y205         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y205         FDRE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.113     2.000 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[12]/Q
+                         net (fo=1, routed)           0.110     2.110    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[15]_1[12]
+    SLICE_X1Y204         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.883     2.150    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X1Y204         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[12]/C
+                         clock pessimism             -0.206     1.944    
+    SLICE_X1Y204         FDRE (Hold_DFF2_SLICEM_C_D)
+                                                      0.102     2.046    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -2.046    
+                         arrival time                           2.110    
+  -------------------------------------------------------------------
+                         slack                                  0.064    
+
+Slack (MET) :             0.064ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.179ns  (logic 0.112ns (62.570%)  route 0.067ns (37.430%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.115ns
+    Source Clock Delay      (SCD):    1.872ns
+    Clock Pessimism Removal (CPR):    0.231ns
+  Clock Net Delay (Source):      1.656ns (routing 0.702ns, distribution 0.954ns)
+  Clock Net Delay (Destination): 1.848ns (routing 0.768ns, distribution 1.080ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.656     1.872    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/aclk
+    SLICE_X2Y210         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y210         FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.112     1.984 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[11]/Q
+                         net (fo=1, routed)           0.067     2.051    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[15]_1[11]
+    SLICE_X2Y210         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.848     2.115    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X2Y210         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[11]/C
+                         clock pessimism             -0.231     1.884    
+    SLICE_X2Y210         FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.103     1.987    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.987    
+                         arrival time                           2.051    
+  -------------------------------------------------------------------
+                         slack                                  0.064    
+
+Slack (MET) :             0.064ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[14]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.179ns  (logic 0.112ns (62.570%)  route 0.067ns (37.430%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.133ns
+    Source Clock Delay      (SCD):    1.888ns
+    Clock Pessimism Removal (CPR):    0.233ns
+  Clock Net Delay (Source):      1.672ns (routing 0.702ns, distribution 0.970ns)
+  Clock Net Delay (Destination): 1.866ns (routing 0.768ns, distribution 1.098ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.672     1.888    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/aclk
+    SLICE_X2Y204         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[14]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y204         FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.112     2.000 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[14]/Q
+                         net (fo=1, routed)           0.067     2.067    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[15]_1[14]
+    SLICE_X2Y204         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.866     2.133    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X2Y204         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[14]/C
+                         clock pessimism             -0.233     1.900    
+    SLICE_X2Y204         FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.103     2.003    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_bid_i_reg[14]
+  -------------------------------------------------------------------
+                         required time                         -2.003    
+                         arrival time                           2.067    
+  -------------------------------------------------------------------
+                         slack                                  0.064    
+
+Slack (MET) :             0.064ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.179ns  (logic 0.112ns (62.570%)  route 0.067ns (37.430%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.178ns
+    Source Clock Delay      (SCD):    1.914ns
+    Clock Pessimism Removal (CPR):    0.252ns
+  Clock Net Delay (Source):      1.698ns (routing 0.702ns, distribution 0.996ns)
+  Clock Net Delay (Destination): 1.911ns (routing 0.768ns, distribution 1.143ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.698     1.914    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/aclk
+    SLICE_X2Y187         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y187         FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.112     2.026 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[0]/Q
+                         net (fo=1, routed)           0.067     2.093    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt_reg[7]_0[0]
+    SLICE_X2Y187         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.911     2.178    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X2Y187         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[0]/C
+                         clock pessimism             -0.252     1.926    
+    SLICE_X2Y187         FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.103     2.029    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -2.029    
+                         arrival time                           2.093    
+  -------------------------------------------------------------------
+                         slack                                  0.064    
+
+Slack (MET) :             0.069ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[61]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.254ns  (logic 0.147ns (57.805%)  route 0.107ns (42.195%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.084ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.135ns
+    Source Clock Delay      (SCD):    1.899ns
+    Clock Pessimism Removal (CPR):    0.152ns
+  Clock Net Delay (Source):      1.683ns (routing 0.702ns, distribution 0.981ns)
+  Clock Net Delay (Destination): 1.868ns (routing 0.768ns, distribution 1.100ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.683     1.899    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/aclk
+    SLICE_X1Y191         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[61]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y191         FDRE (Prop_GFF2_SLICEM_C_Q)
+                                                      0.114     2.013 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[61]/Q
+                         net (fo=2, routed)           0.078     2.092    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt_reg[7]_0[21]
+    SLICE_X0Y191         LUT4 (Prop_D6LUT_SLICEL_I3_O)
+                                                      0.033     2.125 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt[5]_i_1/O
+                         net (fo=1, routed)           0.029     2.154    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/p_0_in[5]
+    SLICE_X0Y191         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.868     2.135    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X0Y191         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt_reg[5]/C
+                         clock pessimism             -0.152     1.983    
+    SLICE_X0Y191         FDRE (Hold_DFF_SLICEL_C_D)
+                                                      0.101     2.084    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.read_cnt_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -2.084    
+                         arrival time                           2.154    
+  -------------------------------------------------------------------
+                         slack                                  0.069    
+
+Slack (MET) :             0.075ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[46]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.237ns  (logic 0.112ns (47.267%)  route 0.125ns (52.733%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.061ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.179ns
+    Source Clock Delay      (SCD):    1.914ns
+    Clock Pessimism Removal (CPR):    0.204ns
+  Clock Net Delay (Source):      1.698ns (routing 0.702ns, distribution 0.996ns)
+  Clock Net Delay (Destination): 1.912ns (routing 0.768ns, distribution 1.144ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.698     1.914    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X2Y186         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y186         FDRE (Prop_AFF_SLICEM_C_Q)
+                                                      0.112     2.026 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[11]/Q
+                         net (fo=2, routed)           0.125     2.151    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[50]_0[11]
+    SLICE_X2Y185         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[46]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.912     2.179    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/aclk
+    SLICE_X2Y185         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[46]/C
+                         clock pessimism             -0.204     1.975    
+    SLICE_X2Y185         FDRE (Hold_EFF_SLICEM_C_D)
+                                                      0.101     2.076    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[46]
+  -------------------------------------------------------------------
+                         required time                         -2.076    
+                         arrival time                           2.151    
+  -------------------------------------------------------------------
+                         slack                                  0.075    
+
+Slack (MET) :             0.076ns  (arrival time - required time)
+  Source:                 design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Destination:            design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[39]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.282ns  (logic 0.112ns (39.765%)  route 0.170ns (60.235%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.104ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.150ns
+    Source Clock Delay      (SCD):    1.894ns
+    Clock Pessimism Removal (CPR):    0.152ns
+  Clock Net Delay (Source):      1.678ns (routing 0.702ns, distribution 0.976ns)
+  Clock Net Delay (Destination): 1.883ns (routing 0.768ns, distribution 1.115ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.678     1.894    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/aclk
+    SLICE_X0Y182         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y182         FDRE (Prop_CFF_SLICEL_C_Q)
+                                                      0.112     2.006 r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_decerr_slave.decerr_slave_inst/gen_axi.s_axi_rid_i_reg[4]/Q
+                         net (fo=2, routed)           0.170     2.176    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[50]_0[4]
+    SLICE_X1Y185         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[39]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.883     2.150    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/aclk
+    SLICE_X1Y185         FDRE                                         r  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[39]/C
+                         clock pessimism             -0.152     1.998    
+    SLICE_X1Y185         FDRE (Hold_AFF2_SLICEM_C_D)
+                                                      0.102     2.100    design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/r.r_pipe/skid_buffer_reg[39]
+  -------------------------------------------------------------------
+                         required time                         -2.100    
+                         arrival time                           2.176    
+  -------------------------------------------------------------------
+                         slack                                  0.076    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_pl_0
+Waveform(ns):       { 0.000 5.156 }
+Period(ns):         10.312
+Sources:            { design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0] }
+
+Check Type        Corner  Lib Pin          Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     PS8/MAXIGP2ACLK  n/a            3.000         10.312      7.312      PS8_X0Y0      design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+Min Period        n/a     SRL16E/CLK       n/a            1.524         10.312      8.788      SLICE_X1Y204  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.wdata_router_w/wrouter_aw_fifo/gen_srls[0].gen_rep[1].srl_nx1/gen_rtl_shifter.gen_inferred_srl.shift_reg_reg[0]_srl32/CLK
+Min Period        n/a     SRL16E/CLK       n/a            1.524         10.312      8.788      SLICE_X2Y196  design_1_i/proc_sys_reset_0/U0/EXT_LPF/POR_SRL_I/CLK
+Min Period        n/a     FDRE/C           n/a            0.550         10.312      9.762      SLICE_X0Y196  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/aresetn_d_reg/C
+Min Period        n/a     FDRE/C           n/a            0.550         10.312      9.762      SLICE_X2Y193  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].r_issuing_cnt_reg[16]/C
+Min Period        n/a     FDRE/C           n/a            0.550         10.312      9.762      SLICE_X1Y202  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].w_issuing_cnt_reg[16]/C
+Min Period        n/a     FDRE/C           n/a            0.550         10.312      9.762      SLICE_X2Y187  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[0]/C
+Min Period        n/a     FDRE/C           n/a            0.550         10.312      9.762      SLICE_X3Y187  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[10]/C
+Min Period        n/a     FDRE/C           n/a            0.550         10.312      9.762      SLICE_X2Y186  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[11]/C
+Min Period        n/a     FDRE/C           n/a            0.550         10.312      9.762      SLICE_X4Y185  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[12]/C
+Low Pulse Width   Slow    PS8/MAXIGP2ACLK  n/a            1.500         5.156       3.656      PS8_X0Y0      design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+Low Pulse Width   Fast    PS8/MAXIGP2ACLK  n/a            1.500         5.156       3.656      PS8_X0Y0      design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+Low Pulse Width   Slow    SRL16E/CLK       n/a            0.762         5.156       4.394      SLICE_X1Y204  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.wdata_router_w/wrouter_aw_fifo/gen_srls[0].gen_rep[1].srl_nx1/gen_rtl_shifter.gen_inferred_srl.shift_reg_reg[0]_srl32/CLK
+Low Pulse Width   Fast    SRL16E/CLK       n/a            0.762         5.156       4.394      SLICE_X1Y204  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.wdata_router_w/wrouter_aw_fifo/gen_srls[0].gen_rep[1].srl_nx1/gen_rtl_shifter.gen_inferred_srl.shift_reg_reg[0]_srl32/CLK
+Low Pulse Width   Slow    SRL16E/CLK       n/a            0.762         5.156       4.394      SLICE_X2Y196  design_1_i/proc_sys_reset_0/U0/EXT_LPF/POR_SRL_I/CLK
+Low Pulse Width   Fast    SRL16E/CLK       n/a            0.762         5.156       4.394      SLICE_X2Y196  design_1_i/proc_sys_reset_0/U0/EXT_LPF/POR_SRL_I/CLK
+Low Pulse Width   Slow    FDRE/C           n/a            0.275         5.156       4.881      SLICE_X0Y196  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/aresetn_d_reg/C
+Low Pulse Width   Fast    FDRE/C           n/a            0.275         5.156       4.881      SLICE_X0Y196  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/aresetn_d_reg/C
+Low Pulse Width   Slow    FDRE/C           n/a            0.275         5.156       4.881      SLICE_X2Y193  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].r_issuing_cnt_reg[16]/C
+Low Pulse Width   Fast    FDRE/C           n/a            0.275         5.156       4.881      SLICE_X2Y193  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].r_issuing_cnt_reg[16]/C
+High Pulse Width  Slow    PS8/MAXIGP2ACLK  n/a            1.500         5.156       3.656      PS8_X0Y0      design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+High Pulse Width  Fast    PS8/MAXIGP2ACLK  n/a            1.500         5.156       3.656      PS8_X0Y0      design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP2ACLK
+High Pulse Width  Slow    SRL16E/CLK       n/a            0.762         5.156       4.394      SLICE_X1Y204  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.wdata_router_w/wrouter_aw_fifo/gen_srls[0].gen_rep[1].srl_nx1/gen_rtl_shifter.gen_inferred_srl.shift_reg_reg[0]_srl32/CLK
+High Pulse Width  Fast    SRL16E/CLK       n/a            0.762         5.156       4.394      SLICE_X1Y204  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.wdata_router_w/wrouter_aw_fifo/gen_srls[0].gen_rep[1].srl_nx1/gen_rtl_shifter.gen_inferred_srl.shift_reg_reg[0]_srl32/CLK
+High Pulse Width  Slow    SRL16E/CLK       n/a            0.762         5.156       4.394      SLICE_X2Y196  design_1_i/proc_sys_reset_0/U0/EXT_LPF/POR_SRL_I/CLK
+High Pulse Width  Fast    SRL16E/CLK       n/a            0.762         5.156       4.394      SLICE_X2Y196  design_1_i/proc_sys_reset_0/U0/EXT_LPF/POR_SRL_I/CLK
+High Pulse Width  Slow    FDRE/C           n/a            0.275         5.156       4.881      SLICE_X0Y196  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/aresetn_d_reg/C
+High Pulse Width  Fast    FDRE/C           n/a            0.275         5.156       4.881      SLICE_X0Y196  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/aresetn_d_reg/C
+High Pulse Width  Slow    FDRE/C           n/a            0.275         5.156       4.881      SLICE_X2Y193  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].r_issuing_cnt_reg[16]/C
+High Pulse Width  Fast    FDRE/C           n/a            0.275         5.156       4.881      SLICE_X2Y193  design_1_i/axi_interconnect_ctrl/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[2].r_issuing_cnt_reg[16]/C
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  clk_pl_0
+
+Max Delay             1 Endpoint
+Min Delay             1 Endpoint
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                            (internal pin)
+  Destination:            design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        1.123ns  (logic 0.134ns (11.932%)  route 0.989ns (88.068%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Uncertainty:      0.157ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.673ns (routing 0.702ns, distribution 0.971ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8                          0.000     0.000 f  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                         net (fo=1, routed)           0.765     0.765    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/ext_reset_in
+    SLICE_X2Y197         LUT1 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.134     0.899 r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1/O
+                         net (fo=1, routed)           0.224     1.123    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/exr_d1
+    SLICE_X2Y197         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.673     1.889    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/slowest_sync_clk
+    SLICE_X2Y197         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                            (internal pin)
+  Destination:            design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.156ns period=10.312ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.422ns  (logic 0.067ns (15.877%)  route 0.355ns (84.123%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Uncertainty:      0.157ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.310ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.112ns (routing 0.454ns, distribution 0.658ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8                          0.000     0.000 f  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                         net (fo=1, routed)           0.295     0.295    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/ext_reset_in
+    SLICE_X2Y197         LUT1 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.067     0.362 r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1/O
+                         net (fo=1, routed)           0.060     0.422    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/exr_d1
+    SLICE_X2Y197         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.164     0.164    design_1_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.023     0.187 r  design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X0Y2 (CLOCK_ROOT)    net (fo=565, routed)         1.112     1.299    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/slowest_sync_clk
+    SLICE_X2Y197         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C
+
+
+
+
+

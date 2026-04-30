@@ -1,0 +1,5 @@
+1 warning and 26 errors generated.
+Error while processing D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\ProjectOne\solution1\.autopilot\db\inference_top.pp.0.cpp.
+clang-tidy applied 130 of 130 suggested fixes.
+Suppressed 133 warnings (132 in non-user code, 1 with check filters).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

@@ -1,0 +1,448 @@
+BÁO CÁO CHI TIẾT BƯỚC 7
+TÍCH HỢP HỆ THỐNG TRÊN KV260 VÀ XUẤT BITSTREAM/XSA
+
+1. Mục tiêu của bước 7
+
+Bước 7 là giai đoạn chuyển thiết kế từ mức HLS sang mức hệ thống hoàn chỉnh có thể chạy trên board FPGA KV260. Nếu ở các bước trước nhóm đã:
+
+- huấn luyện mô hình trên Python,
+- chuyển mô hình sang C/C++ để HLS tổng hợp,
+- tạo được HLS IP cho hàm suy luận,
+
+thì ở bước 7 nhiệm vụ là ghép IP đó vào một hệ thống SoC thực tế, trong đó:
+
+- PS (Processing System) của Zynq UltraScale+ đóng vai trò điều khiển,
+- PL (Programmable Logic) thực hiện phần tăng tốc suy luận,
+- DDR dùng để chứa ảnh đầu vào và trọng số,
+- Vivado dùng để nối toàn bộ các khối lại thành một Block Design hoàn chỉnh.
+
+Nói ngắn gọn, bước 7 biến "thuật toán đã chạy được trong HLS" thành "phần cứng có thể nạp xuống board".
+
+
+2. Hiện vật đã có trong project, chứng minh bước 7 đã được thực hiện
+
+Trong project hiện có các file quan trọng liên quan trực tiếp đến bước 7:
+
+- HLS top function:
+  D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\inference_top.cpp
+
+- Log C Simulation:
+  D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\ProjectOne\solution1\csim\report\inference_top_csim.log
+
+- HLS synthesis report:
+  D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\ProjectOne\solution1\syn\report\inference_top_csynth.rpt
+
+- Bitstream Vivado:
+  D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\Vivado\project_1\project_1.runs\impl_1\design_1_wrapper.bit
+
+- File hardware handoff:
+  D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\Vivado\project_1\design_1_wrapper.xsa
+
+Các file trên cho thấy quy trình không dừng ở mức mô phỏng, mà đã đi qua:
+
+- C simulation trong HLS,
+- C synthesis tạo IP,
+- tích hợp Vivado,
+- generate bitstream,
+- export hardware platform (.xsa).
+
+
+3. Ý nghĩa của HLS IP ở bước 7
+
+Top function của hệ thống nằm trong file inference_top.cpp. Hàm này nhận:
+
+- input[784]: ảnh nhiễu MNIST 28x28,
+- denoiser_w[665]: toàn bộ trọng số của mạng khử nhiễu,
+- classifier_w[5738]: toàn bộ trọng số của mạng phân loại,
+- digit: kết quả dự đoán chữ số.
+
+Luồng xử lý bên trong top function là:
+
+Ảnh nhiễu -> D_CNN (denoiser) -> ảnh đã khử nhiễu -> C_CNN (classifier) -> digit
+
+Điểm quan trọng ở đây là HLS không chỉ tổng hợp phần tính toán, mà còn sinh luôn giao tiếp phần cứng cho top function. Từ góc nhìn hệ thống, inference_top trở thành một IP core có:
+
+- cổng AXI4 master để đọc dữ liệu lớn từ DDR,
+- cổng AXI4-Lite để PS cấu hình và lấy kết quả,
+- clock/reset để hoạt động trong PL.
+
+Điều này chính là nền tảng để đưa IP vào Vivado Block Design.
+
+
+4. Kết quả C-Simulation và ý nghĩa trước khi tích hợp hệ thống
+
+Theo file inference_top_csim.log, testbench đã chạy 100 ảnh và đạt:
+
+Accuracy = 94/100 = 94.00%
+
+Ý nghĩa của kết quả này:
+
+- HLS top function đã chạy đúng chức năng ở mức C/C++.
+- Dữ liệu đầu vào, trọng số và luồng denoiser -> classifier đã được nối đúng.
+- Trước khi đưa sang Vivado, nhóm đã có bằng chứng rằng lõi tính toán hoạt động được.
+
+Con số 94% không nhất thiết phải bằng tuyệt đối accuracy của PyTorch, vì khi chuyển sang HLS có thể đã xuất hiện:
+
+- sai khác số học do fixed-point,
+- sai khác do làm tròn,
+- khác biệt nhỏ trong cách cài đặt các lớp.
+
+Tuy nhiên, 94/100 là đủ để chứng minh hệ thống HLS đã hoạt động thực tế và có thể tiếp tục sang bước tích hợp SoC.
+
+
+5. Kết quả C-Synthesis và ý nghĩa tài nguyên
+
+Theo file inference_top_csynth.rpt:
+
+- Clock target: 10.00 ns
+- Estimated clock: 7.300 ns
+- Latency tổng: khoảng 6.463 ms đến 6.755 ms cho một lần suy luận
+- Tài nguyên HLS ước lượng:
+  + BRAM_18K: 61
+  + DSP: 200
+  + FF: 18,976
+  + LUT: 34,399
+
+Ý nghĩa:
+
+- Thiết kế đã đạt timing mục tiêu 100 MHz ở mức HLS vì estimated clock 7.3 ns nhỏ hơn target 10 ns.
+- Denoiser chiếm phần lớn thời gian xử lý, khoảng 4.86 - 5.11 ms.
+- Classifier chiếm khoảng 1.60 - 1.64 ms.
+- Tổng thời gian suy luận nằm ở mức mili giây, phù hợp với mục tiêu tăng tốc phần cứng.
+
+Nói cách khác, trước khi đưa sang Vivado, nhóm đã biết IP có khả năng chạy được với clock mục tiêu và có mức sử dụng tài nguyên chấp nhận được trên chip KV260.
+
+
+6. Từ HLS IP sang Vivado Block Design
+
+Sau khi HLS synthesis thành công, IP inference_top được export sang Vivado IP Catalog. Đây là bước rất quan trọng vì:
+
+- Vitis HLS tạo ra RTL tương ứng với hàm C/C++,
+- đồng thời đóng gói RTL đó thành một IP chuẩn để Vivado có thể kéo-thả vào thiết kế hệ thống,
+- tự sinh các cổng giao tiếp AXI cần thiết.
+
+Trong README, IP export được mô tả có các giao diện:
+
+- s_axi_control
+- s_axi_control_r
+- m_axi_gmem0
+- m_axi_gmem1
+
+Ý nghĩa từng loại:
+
+- s_axi_control / s_axi_control_r:
+  dùng cho các thanh ghi điều khiển mức thấp, ví dụ ghi lệnh bắt đầu chạy, truyền địa chỉ buffer, đọc trạng thái, đọc kết quả.
+
+- m_axi_gmem0 / m_axi_gmem1:
+  là các cổng master AXI giúp IP chủ động đọc dữ liệu trong DDR.
+  Đây là điểm mấu chốt vì ảnh đầu vào và trọng số đều lớn hơn nhiều so với việc truyền trực tiếp qua AXI-Lite.
+
+Tư duy thiết kế ở đây là:
+
+- dữ liệu lớn đi bằng AXI memory-mapped master,
+- lệnh điều khiển nhỏ đi bằng AXI-Lite.
+
+Đây là kiến trúc rất điển hình trong hệ thống tăng tốc trên Zynq.
+
+
+7. Vai trò của từng khối trong Block Design
+
+Hệ thống ở bước 7 gồm các khối chính sau:
+
+7.1. zynq_ultra_ps_e_0
+
+Đây là khối Processing System của chip Zynq UltraScale+ MPSoC. Nó đại diện cho phần CPU ARM, bộ điều khiển DDR, clock, reset và các cổng AXI nối giữa PS và PL.
+
+Vai trò của khối này:
+
+- cấp clock cho PL,
+- cấp reset đồng bộ,
+- cho phép CPU cấu hình IP trong PL,
+- tạo đường truyền dữ liệu giữa PL và bộ nhớ DDR.
+
+Nói đơn giản, đây là "bộ não điều phối" của toàn hệ thống.
+
+
+7.2. inference_top_0
+
+Đây là HLS IP chứa toàn bộ pipeline:
+
+- denoiser,
+- classifier,
+- logic trả kết quả chữ số dự đoán.
+
+Khối này chính là phần tăng tốc phần cứng thực sự. Khi được kích hoạt, IP sẽ:
+
+- đọc ảnh nhiễu từ DDR,
+- đọc trọng số denoiser và classifier từ DDR,
+- chạy suy luận trong PL,
+- ghi hoặc trả về giá trị dự đoán cho PS.
+
+
+7.3. axi_interconnect_ctrl
+
+Khối này nối đường AXI điều khiển giữa PS và HLS IP.
+
+Vai trò:
+
+- cho PS ghi lệnh điều khiển xuống IP,
+- cho PS đọc trạng thái hoặc kết quả từ IP.
+
+Đây là loại giao tiếp lưu lượng nhỏ nhưng rất quan trọng vì nếu không có nó thì CPU không thể ra lệnh cho accelerator bắt đầu chạy.
+
+
+7.4. axi_interconnect_mem
+
+Khối này nối các cổng AXI master của HLS IP tới bộ nhớ DDR thông qua cổng hiệu năng cao của PS.
+
+Vai trò:
+
+- cho IP đọc ảnh đầu vào từ DDR,
+- cho IP đọc mảng trọng số từ DDR,
+- bảo đảm dữ liệu lớn đi qua đường có băng thông phù hợp.
+
+Khối này phục vụ luồng dữ liệu lớn nên tiêu chí chính là throughput, không phải điều khiển thanh ghi.
+
+
+7.5. proc_sys_reset_0
+
+Khối reset giúp đồng bộ tín hiệu reset giữa PS và toàn bộ logic trong PL.
+
+Vai trò:
+
+- tránh trạng thái khởi động không xác định,
+- bảo đảm IP, interconnect và các logic phụ cùng được reset đúng cách,
+- giúp hệ thống ổn định khi nạp bitstream hoặc khi khởi động lại.
+
+
+8. Luồng hoạt động toàn hệ thống ở bước 7
+
+Khi hệ thống chạy trên board, trình tự hoạt động sẽ là:
+
+Bước 1:
+PS hoặc ứng dụng userspace trên Linux nạp ảnh đầu vào và trọng số vào DDR.
+
+Bước 2:
+PS ghi vào thanh ghi điều khiển của HLS IP qua vùng địa chỉ AXI-Lite, trong đó có:
+
+- địa chỉ vùng nhớ chứa input,
+- địa chỉ vùng nhớ chứa weights,
+- lệnh AP_START để bắt đầu suy luận.
+
+Bước 3:
+HLS IP sau khi nhận lệnh sẽ dùng các cổng m_axi để đọc dữ liệu từ DDR:
+
+- gmem0 đọc ảnh,
+- gmem1 đọc trọng số.
+
+Bước 4:
+Phần cứng trong PL xử lý pipeline:
+
+- khử nhiễu ảnh,
+- phân loại ảnh,
+- tạo ra digit dự đoán.
+
+Bước 5:
+PS đọc lại kết quả từ thanh ghi điều khiển hoặc vùng đọc kết quả của IP.
+
+Toàn bộ quá trình này cho thấy vai trò tách biệt rất rõ:
+
+- PS mạnh về điều khiển, phần mềm, quản lý bộ nhớ,
+- PL mạnh về tính toán song song và tăng tốc.
+
+
+9. Vì sao phải dùng DDR thay vì truyền dữ liệu trực tiếp qua AXI-Lite
+
+AXI-Lite chỉ phù hợp cho:
+
+- ghi vài thanh ghi điều khiển,
+- đọc vài giá trị trạng thái,
+- truyền lượng dữ liệu nhỏ.
+
+Trong bài toán này, dữ liệu không chỉ có 784 pixel đầu vào mà còn có toàn bộ trọng số của hai mạng. Nếu truyền toàn bộ qua AXI-Lite thì:
+
+- chậm,
+- tốn nhiều giao dịch điều khiển,
+- không phù hợp cho accelerator.
+
+Vì vậy thiết kế dùng m_axi để đọc trực tiếp từ DDR là hợp lý hơn rất nhiều. Cách làm này:
+
+- tăng băng thông,
+- giảm tải cho CPU,
+- đúng với mô hình hệ thống tăng tốc phần cứng thực tế.
+
+
+10. Giải thích address map
+
+README mô tả address map như sau:
+
+- s_axi_control     : 0xA000_0000
+- s_axi_control_r   : 0xA001_0000
+- m_axi_gmem0/1     : ánh xạ tới không gian DDR
+
+Ý nghĩa của việc cấp địa chỉ riêng:
+
+- PS biết chính xác vùng nào để ghi lệnh điều khiển,
+- PS biết vùng nào để đọc kết quả hoặc trạng thái,
+- IP biết mình sẽ truy cập DDR thông qua cổng hiệu năng cao.
+
+Việc tách địa chỉ điều khiển và địa chỉ dữ liệu giúp phần mềm dễ viết hơn, vì ứng dụng trên PS chỉ cần:
+
+- mmap thanh ghi điều khiển qua /dev/mem,
+- ghi đúng offset quy định,
+- polling trạng thái hoàn thành,
+- đọc digit dự đoán.
+
+Đây là cách làm phổ biến trong các hệ thống embedded Linux dùng accelerator tùy biến.
+
+
+11. Vì sao dùng AXI Interconnect thay vì SmartConnect
+
+README đã nêu rõ lý do kỹ thuật rất đáng chú ý:
+
+SmartConnect trong Vivado 2022.2 có thể sinh sub-design nội bộ theo kiểu OOC (out-of-context). Khi project bị reset hoặc regenerate không đầy đủ, module nội bộ có thể thành black box và gây lỗi DRC, ví dụ lỗi INBB-3.
+
+Điều này nguy hiểm vì:
+
+- thiết kế có thể validate ở một thời điểm nhưng fail ở thời điểm khác,
+- project khó tái tạo ổn định,
+- khi nộp hoặc khi mở lại project dễ phát sinh lỗi khó sửa.
+
+AXI Interconnect thì đơn giản hơn và ổn định hơn trong bối cảnh này:
+
+- ít phụ thuộc vào sub-BD nội bộ,
+- netlist rõ ràng hơn,
+- ít rủi ro black box hơn.
+
+Vì thế việc chọn AXI Interconnect là một quyết định thiên về độ ổn định của project, không chỉ là vấn đề "chạy được".
+
+
+12. Vì sao tách thành 2 interconnect riêng
+
+Thiết kế dùng:
+
+- một interconnect cho control,
+- một interconnect cho memory.
+
+Đây là quyết định rất hợp lý vì hai loại traffic này hoàn toàn khác nhau.
+
+12.1. Control path
+
+Đặc điểm:
+
+- dữ liệu ít,
+- chủ yếu là đọc/ghi thanh ghi,
+- cần phản hồi nhanh,
+- nhạy với độ trễ hơn là băng thông.
+
+Vì vậy đường control được tối ưu cho việc PS ra lệnh cho IP.
+
+12.2. Memory path
+
+Đặc điểm:
+
+- dữ liệu lớn,
+- thường là burst read,
+- cần băng thông cao,
+- ít nhạy với độ trễ từng giao dịch đơn lẻ hơn control path.
+
+Vì vậy memory path được nối vào cổng HP0 để tận dụng băng thông cao hơn.
+
+Tách hai đường như vậy mang lại lợi ích:
+
+- tránh xung đột traffic,
+- dễ debug,
+- rõ ràng về chức năng,
+- hợp lý về hiệu năng hệ thống.
+
+
+13. Ý nghĩa của việc dùng một clock domain duy nhất
+
+Toàn bộ PL chạy trên một clock domain duy nhất, lấy từ pl_clk0 của PS, khoảng 100 MHz.
+
+Lợi ích:
+
+- thiết kế đơn giản hơn,
+- không cần xử lý CDC phức tạp giữa nhiều miền clock,
+- dễ timing closure,
+- dễ debug hơn khi mô phỏng và khi chạy thực tế.
+
+Trong một đồ án triển khai accelerator đầu tiên, chọn một clock domain thống nhất là quyết định rất tốt vì ưu tiên độ ổn định và khả năng hoàn thành.
+
+
+14. Ý nghĩa của các file đầu ra ở bước 7
+
+14.1. design_1_wrapper.bit
+
+Đây là bitstream. File này chứa cấu hình logic cho phần PL của FPGA. Khi nạp file này xuống board, phần cứng trong PL sẽ được lập trình theo đúng Block Design và netlist đã tổng hợp/implement.
+
+Nếu chưa có bitstream thì thiết kế chưa thể chạy trên FPGA thực.
+
+
+14.2. design_1_wrapper.xsa
+
+Đây là file hardware handoff platform. Nó không chỉ chứa thông tin phần cứng mà còn là đầu vào cho các bước software tiếp theo như:
+
+- tạo PetaLinux project,
+- cấu hình BSP,
+- xây dựng userspace app hoặc driver,
+- đóng gói boot image.
+
+Nói cách khác:
+
+- bitstream dùng để nạp phần cứng,
+- xsa dùng để mô tả phần cứng cho toolchain phần mềm.
+
+
+15. Kết quả cuối cùng của bước 7
+
+Theo README và các file hiện có, bước 7 đã đạt được 3 mốc quan trọng:
+
+- Validate Block Design: PASS
+- Generate Bitstream: PASS
+- Export Hardware (.xsa): PASS
+
+Đây là kết quả rất quan trọng, vì nó chứng minh:
+
+- HLS IP đã được tích hợp thành công vào hệ thống SoC,
+- thiết kế Vivado là hợp lệ,
+- backend flow đã chạy đến cuối,
+- project đã sẵn sàng cho giai đoạn triển khai trên board thật.
+
+
+16. Bước tiếp theo sau bước 7
+
+Sau khi đã có bitstream và xsa, bước tiếp theo là deployment lên board KV260 bằng PetaLinux.
+
+Mục tiêu của giai đoạn này là:
+
+- tạo Linux image phù hợp với phần cứng,
+- nạp bitstream khi boot,
+- chạy ứng dụng điều khiển từ phía PS,
+- kiểm tra suy luận trực tiếp trên board.
+
+Lúc này phần mềm phía PS sẽ làm các việc:
+
+- cấp phát hoặc chuẩn bị buffer trong DDR,
+- ghi dữ liệu ảnh và trọng số,
+- mmap vùng thanh ghi điều khiển của accelerator,
+- ghi AP_START,
+- chờ IP xử lý xong,
+- đọc chữ số dự đoán trả về.
+
+Vì thế, bước 7 là cầu nối bắt buộc giữa phần thiết kế accelerator và phần chạy thật trên thiết bị.
+
+
+17. Kết luận
+
+Bước 7 không đơn thuần là "xuất bitstream", mà là bước hoàn thiện toàn bộ hệ thống tăng tốc trên nền SoC FPGA. Giá trị kỹ thuật của bước này nằm ở chỗ:
+
+- biến mô hình học máy thành IP phần cứng,
+- ghép IP vào kiến trúc PS-PL-DDR thực tế,
+- xây dựng được đường điều khiển và đường dữ liệu đúng chuẩn,
+- tạo ra file bitstream để cấu hình FPGA,
+- tạo ra file xsa để phục vụ triển khai hệ điều hành và phần mềm trên board.
+
+Nếu nhìn toàn bộ đồ án như một chuỗi từ mô hình AI đến phần cứng thật, thì bước 7 chính là thời điểm thiết kế "bước ra khỏi môi trường mô phỏng" và trở thành một hệ thống có thể triển khai trên KV260.
+
+Nói cách khác, đây là bước chứng minh rằng đồ án không chỉ dừng ở mức thuật toán, mà đã đi đến tích hợp phần cứng ở mức hệ thống.

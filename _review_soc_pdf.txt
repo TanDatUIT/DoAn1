@@ -1,0 +1,125 @@
+--- PAGE 1 ---
+Trong  HLS  em  đã  cấu  hình  cho  IP  nhận  dữ  liệu  theo  DDR:  
+#pragma  HLS  INTERFACE  m_axi  port=input          offset=slave  bundle=gmem0  
+#pragma  HLS  INTERFACE  m_axi  port=denoiser_w    offset=slave  bundle=gmem1  
+#pragma  HLS  INTERFACE  m_axi  port=classifier_w  offset=slave  bundle=gmem1  
+ 1.  Hệ  thống  SoC  
+ 2.  Các  khối  chính:  
+Zynq
+ 
+[
+ 
+Bộ
+ 
+não]:
+ 
+khối
+ 
+Processing
+ 
+System
+ 
+của
+ 
+chip
+ 
+Zynq
+ 
+UltraScale+
+ 
+MPSoC
+ inference_top_0  (  HLS  IP):  chứa  toàn  bộ  pipeline  +  Đọc  ảnh  nhiễu  từ  DDR  của  KV260  +  Đọc  trọng  số  denoisier  và  classifer  từ  DDR  +  chạy  suy  luận  trong  PL  +  GHi  hoặc  trả  giá  trị  dự  đoán  cho  P  AXI  interconnect:   +  axi_interconnect_ctrl:  Khối  này  nối  đường  AXI  điều  khiển  giữa  PS  và  HLS  IP.  +  axi_interconnect_mem:  Khối  này  nối  các  cổng  AXI  master  của  HLS  IP  tới  bộ  nhớ  
+DDR
+ 
+thông
+ 
+qua
+ 
+cổng
+ 
+hiệu
+ 
+năng
+ 
+cao
+ 
+của
+ 
+PS
+ proc_sys_reset_0:  Khối  reset  giúp  đồng  bộ  tín  hiệu  reset  giữa  PS  và  toàn  bộ  logic  trong  PL  Note:   m_axi_gmem0  /  m_axi_gmem1:  là  các  cổng  master  AXI  giúp  IP  chủ  động  đọc  dữ  
+liệu
+ 
+trong
+ 
+DDR.
+ Dữ  liệu  lớn  đi  bằng  AXI  memory-mapped  master,  
+
+--- PAGE 2 ---
+Lệnh  điều  khiển  nhỏ  đi  bằng  AXI-Lite.  3.  Luồng  hoạt  động:  -  Nạp  ảnh  đầu  vào  vào  DDR  -  PS  ghi  vào  thanh  ghi  điều  khiển  HLS  IP  thông  qua  AXI-Lite  -  HLS  IP  sau  khi  nhận  lệnh  sẽ  dùng  cổng  m_axi  để  đọc  dữ  liệu  từ  DDR   +  gmem0  đọc  ảnh  +  gmem1  đọc  trọng  số  -  PL  xử  lý  pipeline:  Khử  nhiễu  ảnh  ->  Phân  loại  ảnh  ->  Dự  đoán  số  -  PS  đọc  lại  kết  quả  dự  đoán  từ  thanh  ghi  điều  khiển   Nhận  xét:  -  PS  mạnh  về  điều  khiển,  phần  mềm,  quản  lý  bộ  nhớ  -  PL  mạnh  về  tính  toán  song  song  và  tăng  tốc  =>  Hệ  thống  phân  chia  rõ  ràng  đúng  vai  trò.  4.  Lý  giải  tại  sao  không  dùng  toàn  bộ  với  AXI  LITE:  vì  AXI  LITE  chỉ  phù  hợp  cho  các  hệ  thống  nđộ.  Trong  bài  toán  này,  dữ  liệu  không  chỉ  là  784pixel  (  28  x28x1)  mà  còn  thêm  trọng  số  của  2  
+mạng.
+ Vì  vậy  sử  dụng  m_axi  để  đọc  trực  tiếp  từ  DDR  sẽ  hợp  lý  hơn:\  -  Tăng  băng  thông  -  Giảm  tải  cho  CPU  -  Đúng  với  mô  hình  tăng  tốc  phần  cứng  thực  tế.  Sử  dụng  AXI  Interconnect  là  vì  trong  quá  trình  làm  và  sử  dụng  smart  connect  bước  validate  
+thì
+ 
+bị
+ 
+lỗi
+ 
+đã
+ 
+thử
+ 
+fix
+ 
+nhưng
+ 
+không
+ 
+thành
+ 
+nên
+ 
+chuyển
+ 
+hướng
+ 
+AXI
+ 
+Interconnect.
+ 
+Sau
+ 
+khi
+ 
+tìm
+ 
+hiểu
+ 
+và
+ 
+nhận
+ 
+ra
+ 
+AXI
+ 
+Interconnect:
+ 
+ -  Ít  phụ  thuộc  vào  sub-BD  nội  bộ  -  Netlist  rõ  ràng  hơn  Cuối  cùng:  
+Đã
+ 
+hoàn
+ 
+thành
+ 
+bước
+ 
+Generate
+ 
+Bit
+ 
+Stream
+ Sau  đó  tạo  ra  file  xsa   
+ Hoàn  thành  bước  SoC.   
+
+--- PAGE 3 ---
+ 

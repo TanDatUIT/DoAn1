@@ -58,39 +58,37 @@ Chữ số (0–9)
 Train denoiser trên MNIST với nhiễu Gaussian σ=0.5.
 
 ```bash
-python train_denoiser.py
+python train_denoiser_keras.py
 ```
 
-Kết quả (`results_step1/metrics.json`):
+Kết quả (`results_step1_keras/`):
 
 | Chỉ số | Giá trị |
 |--------|---------|
-| PSNR ảnh nhiễu | 9.38 dB |
-| PSNR ảnh khử nhiễu | 19.19 dB |
-| Cải thiện | **+9.81 dB** |
-| MSE ảnh nhiễu | 0.1156 |
-| MSE ảnh khử nhiễu | 0.0129 |
+| PSNR ảnh nhiễu | ~9 dB |
+| PSNR ảnh khử nhiễu | **18.89 dB** |
+| MSE ảnh khử nhiễu | 0.012925 |
+| Model | `results_step1_keras/denoiser.h5` (Keras/TF) |
 
 ### Bước 2 — Chứng minh hiệu quả Denoiser `XONG`
 
 Train classifier, đánh giá trên 3 kịch bản: ảnh sạch / nhiễu / khử nhiễu.
 
 ```bash
-python train_classifier.py
+python train_classifier_keras.py
 ```
 
-Kết quả (`results_step2/metrics.json`):
+Kết quả (`results_step2_keras/`):
 
 | Kịch bản | Accuracy |
 |----------|----------|
-| Ảnh sạch (baseline) | 99.11% |
-| Ảnh nhiễu (σ=0.5) | 88.90% |
-| Ảnh khử nhiễu | **96.30%** |
-| Cải thiện | **+7.40%** |
+| Ảnh sạch (baseline) | **96.80%** |
+| Ảnh nhiễu (σ=0.5) | 95.29% |
+| Model | `results_step2_keras/classifier_fpga.h5` (Keras/TF) |
 
 ### Bước 3 — Xuất Weights sang C Header `TODO`
 
-Viết script Python đọc `.pth` → xuất mảng float[] ra file `.h`.
+Viết script Python đọc `.h5` → xuất mảng float[] ra file `.h`.
 
 - `weights_denoiser.h` — conv1/conv2/conv3/conv4 weights + bias
 - `weights_classifier.h` — conv1/conv2/fc1/fc2 weights + bias
@@ -100,7 +98,7 @@ Viết script Python đọc `.pth` → xuất mảng float[] ra file `.h`.
 Viết inference C++ thuần cho cả pipeline denoiser → classifier.
 
 - Không dùng framework, chỉ dùng mảng tĩnh
-- Test trên PC, so sánh output với PyTorch
+- Test trên PC, so sánh output với Keras
 
 ### Bước 5 — Quantization Fixed-Point `TODO`
 
@@ -118,13 +116,88 @@ Tổng hợp pipeline thành IP Core.
 - Synthesis Report: BRAM, DSP, LUT, FF, Latency
 - Co-Simulation: xác nhận RTL đúng
 
-### Bước 7 — Tích hợp SoC trên KV260 `TODO`
+### Bước 7 — Tích hợp SoC trên KV260 `HOÀN THÀNH (Bitstream + XSA)`
 
-Ghép IP vào Vivado Block Design, viết phần mềm PS.
+#### 7.1 Xuất IP từ Vitis HLS
 
-- Interface: AXI4-Lite (control) + AXI4 Master (data)
-- PS software: nạp ảnh → chạy IP → đọc kết quả
-- Demo end-to-end: ảnh nhiễu in → số nhận dạng ra
+Sau khi C-Sim đạt **94% accuracy (94/100 ảnh)** và C-Synthesis hoàn thành, IP được export sang Vivado IP Catalog:
+
+- Format: IP Catalog (`.zip`)
+- Giao diện HLS tự sinh: `s_axi_control`, `s_axi_control_r`, `m_axi_gmem0`, `m_axi_gmem1`
+
+#### 7.2 Kiến trúc Block Design (Vivado 2022.2)
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                  Zynq UltraScale+ MPSoC                 │
+│   M_AXI_HPM0_LPD ──→ axi_interconnect_ctrl             │
+│   S_AXI_HP0_FPD  ←── axi_interconnect_mem              │
+│   pl_clk0 (100 MHz) ──→ toàn bộ PL domain              │
+│   pl_resetn0 ──→ proc_sys_reset_0                       │
+└─────────────────────────────────────────────────────────┘
+         │ M00/M01_AXI                  ↑ M00_AXI
+         ↓                              │
+  ┌─────────────┐              ┌────────────────┐
+  │ ctrl intercon│              │ mem interconnect│
+  │ 1S → 2M     │              │ 2S → 1M        │
+  └──────┬──────┘              └───────┬────────┘
+         │ s_axi_control/r             │ m_axi_gmem0/1
+         ↓                             │
+  ┌──────────────────────────────────────────────┐
+  │            inference_top_0  (HLS IP)         │
+  │  Input: 784 pixels (gmem0)                   │
+  │  Weights denoiser 665 + classifier 5738      │
+  │        (gmem1 — packed array)                │
+  │  Output: predicted digit → s_axi_control_r  │
+  └──────────────────────────────────────────────┘
+```
+
+| Khối | Vai trò |
+|------|---------|
+| `zynq_ultra_ps_e_0` | Processing System — clock, reset, AXI master/slave |
+| `inference_top_0` | HLS IP (PL) — chạy Denoiser + Classifier |
+| `axi_interconnect_ctrl` | PS → IP: 1 slave (`M_AXI_HPM0_LPD`) → 2 masters (`s_axi_control`, `s_axi_control_r`) |
+| `axi_interconnect_mem` | IP → DDR: 2 slaves (`m_axi_gmem0/1`) → 1 master (`S_AXI_HP0_FPD`) |
+| `proc_sys_reset_0` | Đồng bộ clock/reset cho toàn PL |
+
+#### 7.3 Address Map
+
+| Interface | Địa chỉ | Kích thước | Mục đích |
+|-----------|---------|-----------|----------|
+| `s_axi_control` | `0xA000_0000` | 64 KB | PS ghi lệnh, địa chỉ input/weights |
+| `s_axi_control_r` | `0xA001_0000` | 64 KB | PS đọc kết quả (predicted digit) |
+| `m_axi_gmem0/1` → `S_AXI_HP0_FPD` | `0x0000_0000` | 2 GB | IP đọc dữ liệu từ DDR |
+
+#### 7.4 Lý giải thiết kế
+
+**Tại sao dùng AXI Interconnect thay SmartConnect?**
+SmartConnect trong Vivado 2022.2 sinh sub-BD nội bộ (`_bd_48ac`) cần OOC synthesis riêng — khi project bị reset thì module này trở thành black box, gây lỗi DRC `INBB-3`. AXI Interconnect 2.1 không có vấn đề này, netlist được generate trực tiếp, ổn định hơn.
+
+**Tại sao dùng 2 AXI Interconnect riêng?**
+- `ctrl`: PS cần **write** lệnh xuống IP (AP_START, địa chỉ buffer) và **read** kết quả — đây là traffic nhỏ, latency-sensitive → dùng LPD master (thấp trễ hơn FPD với các lệnh nhỏ)
+- `mem`: IP cần **burst read** 784 + 6403 words từ DDR → throughput-sensitive → nối thẳng vào HP0 (High Performance port, 128-bit data bus) để tối đa băng thông
+
+**Clock domain:** Toàn bộ PL chạy 1 clock domain duy nhất (`pl_clk0` ≈ 100 MHz), tránh CDC (Clock Domain Crossing) phức tạp.
+
+#### 7.5 Kết quả
+
+| Hạng mục | Kết quả |
+|----------|---------|
+| Validate Block Design | **PASS** |
+| Generate Bitstream | **PASS** (`write_bitstream completed successfully`) |
+| Export Hardware (.xsa) | **PASS** (`design_1_wrapper.xsa`) |
+
+#### 7.6 Bước tiếp theo (deployment)
+
+Triển khai lên board KV260 qua PetaLinux (thực hiện bởi GVHD qua remote):
+```bash
+petalinux-create -t project -n doan1_inference --template zynqMP
+petalinux-config --get-hw-description=design_1_wrapper.xsa
+petalinux-build
+petalinux-package --boot --u-boot --fpga --force
+```
+
+PS userspace app ghi input vào DDR, map `0xA000_0000` qua `/dev/mem`, kích hoạt AP_START, đọc kết quả từ `s_axi_control_r`.
 
 ---
 
@@ -132,19 +205,18 @@ Ghép IP vào Vivado Block Design, viết phần mềm PS.
 
 ```
 DoAn1/
-├── train_denoiser.py              # Bước 1: train denoiser
-├── train_classifier.py            # Bước 2: train classifier
+├── train_denoiser_keras.py        # Bước 1: train denoiser (Keras/TF)
+├── train_classifier_keras.py      # Bước 2: train classifier (Keras/TF)
 ├── generate_report.py             # Tạo báo cáo PDF bước 1
-├── results_step1/
-│   ├── denoiser.pth               # Weights denoiser (PyTorch)
-│   ├── metrics.json               # PSNR, MSE
-│   ├── comparison.png             # Ảnh gốc / nhiễu / khử nhiễu
-│   └── training_curves.png        # Loss & PSNR theo epoch
-├── results_step2/
-│   ├── classifier.pth             # Weights classifier (PyTorch)
-│   ├── metrics.json               # Accuracy 3 kịch bản
-│   ├── accuracy_comparison.png    # Biểu đồ so sánh
-│   └── prediction_comparison.png  # Ảnh + nhãn dự đoán
+├── results_step1_keras/
+│   ├── denoiser.h5                # Weights denoiser (Keras)
+│   └── ...
+├── results_step2_keras/
+│   ├── classifier_fpga.h5         # Weights classifier FPGA-optimized (Keras)
+│   ├── classifier_no_dropout.h5   # Weights classifier không dropout
+│   └── ...
+├── Vivado/                        # Bước 7: Vivado 2022.2 Block Design + Bitstream
+├── hls_project/                   # Bước 6: Vitis HLS project
 ├── papers/                        # Tài liệu tham khảo
 └── data/                          # MNIST dataset (auto-download)
 ```
@@ -156,10 +228,10 @@ DoAn1/
 | Công cụ | Phiên bản |
 |---------|----------|
 | Python | 3.13 |
-| PyTorch | latest |
+| TensorFlow/Keras | 2.21.0 |
 | Vitis HLS | 2022.2 |
 | Vivado | 2022.2 |
-| FPGA Board | AMD KV260 (Zynq UltraScale+) |
+| FPGA Board | AMD KV260 (Zynq UltraScale+, xck26-sfvc784-2LV-c) |
 
 ---
 

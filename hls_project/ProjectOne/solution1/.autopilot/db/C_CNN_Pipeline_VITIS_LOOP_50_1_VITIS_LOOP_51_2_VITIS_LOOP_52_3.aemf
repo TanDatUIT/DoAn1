@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1776192410886">
+  <ports id="1" name="MaxPool_S4_V" type="PortType" coreName="RAM" coreId="1601399156" bitwidth="16" iftype="IfTypeRegister" arraysize="128">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="Flatten_V" type="PortType" coreName="RAM" coreId="1767255928" bitwidth="16" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <edges id="96" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="98" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="101" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="104" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.11"/>
+  <edges id="106" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.12"/>
+  <edges id="108" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="110" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.14"/>
+  <edges id="113" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.15"/>
+  <edges id="114" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.16"/>
+  <edges id="115" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="116" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="119" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="122" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="123" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="124" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="125" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="126" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="127" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="128" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="129" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="130" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="131" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="132" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="135" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="138" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="139" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="140" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="141" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="143" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="144" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="145" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="146" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="147" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
+  <edges id="150" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="151" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="152" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="153" source_obj="//@regions.0/@basic_blocks.1/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.14"/>
+  <edges id="154" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
+  <edges id="157" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.16"/>
+  <edges id="160" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="161" source_obj="//@regions.0/@basic_blocks.1/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="162" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18"/>
+  <edges id="163" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18"/>
+  <edges id="164" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18"/>
+  <edges id="165" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.19"/>
+  <edges id="167" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.20"/>
+  <edges id="170" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
+  <edges id="171" source_obj="//@regions.0/@basic_blocks.1/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
+  <edges id="172" source_obj="//@regions.0/@basic_blocks.1/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
+  <edges id="173" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.22"/>
+  <edges id="174" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.22"/>
+  <edges id="175" source_obj="//@regions.0/@basic_blocks.1/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
+  <edges id="177" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
+  <edges id="178" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="179" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="180" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="181" source_obj="//@regions.0/@basic_blocks.1/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.25"/>
+  <edges id="182" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.26"/>
+  <edges id="183" source_obj="//@regions.0/@basic_blocks.1/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.26"/>
+  <edges id="184" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.26"/>
+  <edges id="185" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.27"/>
+  <edges id="186" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.28"/>
+  <edges id="189" source_obj="//@regions.0/@basic_blocks.1/@node_objs.28" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.29"/>
+  <edges id="190" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.29"/>
+  <edges id="193" source_obj="//@regions.0/@basic_blocks.1/@node_objs.29" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.30"/>
+  <edges id="194" source_obj="//@regions.0/@basic_blocks.1/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.30"/>
+  <edges id="195" source_obj="//@regions.0/@basic_blocks.1/@node_objs.30" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.31"/>
+  <edges id="196" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
+  <edges id="199" source_obj="//@regions.0/@basic_blocks.1/@node_objs.31" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
+  <edges id="200" source_obj="//@regions.0/@basic_blocks.1/@node_objs.33" sink_obj="//@ports.1"/>
+  <edges id="202" source_obj="//@regions.0/@basic_blocks.1/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.33"/>
+  <edges id="203" source_obj="//@regions.0/@basic_blocks.1/@node_objs.32" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.34"/>
+  <edges id="204" source_obj="//@regions.0/@basic_blocks.1/@node_objs.34" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.35"/>
+  <edges id="205" source_obj="//@regions.0/@basic_blocks.1/@node_objs.33" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.35"/>
+  <edges id="206" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.36"/>
+  <edges id="208" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.37"/>
+  <edges id="211" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.38"/>
+  <edges id="214" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.39"/>
+  <edges id="216" source_obj="//@regions.0/@basic_blocks.1/@node_objs.38" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.39"/>
+  <edges id="217" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.40"/>
+  <edges id="218" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.40"/>
+  <edges id="219" source_obj="//@regions.0/@basic_blocks.1/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.41"/>
+  <edges id="220" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.41"/>
+  <edges id="221" source_obj="//@regions.0/@basic_blocks.1/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.42"/>
+  <edges id="222" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.42"/>
+  <edges id="223" source_obj="//@regions.0/@basic_blocks.1/@node_objs.39" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.43"/>
+  <edges id="224" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.43"/>
+  <edges id="225" source_obj="//@regions.0/@basic_blocks.1/@node_objs.26" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.44"/>
+  <edges id="226" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.44"/>
+  <edges id="227" source_obj="//@regions.0/@basic_blocks.1/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.45"/>
+  <edges id="228" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.45"/>
+  <edges id="229" source_obj="//@regions.0/@basic_blocks.1/@node_objs.36" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.46"/>
+  <edges id="230" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.46"/>
+  <edges id="231" source_obj="//@regions.0/@basic_blocks.1/@node_objs.37" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.47"/>
+  <edges id="232" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.47"/>
+  <edges id="233" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.48"/>
+  <edges id="272" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="273" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="274" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="275" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="276" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.41"/>
+  <edges id="277" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.42"/>
+  <edges id="278" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.43"/>
+  <edges id="279" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.44"/>
+  <edges id="280" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.45"/>
+  <edges id="281" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.46"/>
+  <edges id="282" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.47"/>
+  <edges id="283" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="284" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.40"/>
+  <edges id="285" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="286" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.41"/>
+  <edges id="287" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="288" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.42"/>
+  <edges id="289" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="290" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.43"/>
+  <edges id="291" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="292" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.44"/>
+  <edges id="293" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="294" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.45"/>
+  <edges id="295" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="296" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.46"/>
+  <edges id="297" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="298" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.47"/>
+  <edges id="299" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.40"/>
+  <blocks id="20" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>for.inc.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="3" name="k" originalName="k" coreId="539765310" bitwidth="4" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="hs_1" originalName="hs" coreId="539765310" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="j" originalName="j" coreId="1043341356" bitwidth="3" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="hs" originalName="hs" coreId="741486908" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="indvar_flatten325" coreId="539765310" bitwidth="7" opcode="alloca" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="i" originalName="i" coreId="1043341356" bitwidth="3" opcode="alloca" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="indvars_iv378" coreId="539765310" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="indvar_flatten344" coreId="1629498410" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="indvar_flatten344_write_ln0" coreId="741486908" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="indvars_iv378_write_ln0" coreId="539765310" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="i_write_ln0" coreId="1013281633" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="indvar_flatten325_write_ln0" coreId="1043341356" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="hs_write_ln0" coreId="539765310" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="j_write_ln0" coreId="539765310" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="hs_1_write_ln0" coreId="1043341356" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="k_write_ln0" coreId="539765310" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="br_ln0" coreId="539765310" opcode="br" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <controlInputObjs>for.inc.i</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="84" name="_Z10C_flatten0P8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EES3_.exit.exitStub" type="BlockType">
+    <controlInputObjs>for.inc.i</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="83" name="_ln0" coreId="741487420" opcode="ret" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="341" pipe_depth="2" RegionName="VITIS_LOOP_50_1_VITIS_LOOP_51_2_VITIS_LOOP_52_3">
+    <basic_blocks id="26" name="for.inc.i" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>for.inc17.i</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>_Z10C_flatten0P8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EES3_.exit.exitStub</controlOutputObjs>
+      <controlOutputObjs>for.inc17.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="indvar_flatten344_load" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="539765310" contextFuncName="C_flatten0" bitwidth="8" opcode="load" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="icmp_ln50" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="icmp_ln50_fu_162_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="C_flatten0" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.84" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="add_ln50" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln50_fu_168_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="8" opcode="add" m_display="0" m_delay="0.76" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln50" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="741744684" contextFuncName="C_flatten0" opcode="br" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>for.inc17.i</controlInputObjs>
+        <controlInputObjs>_Z10C_flatten0P8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EES3_.exit.exitStub</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="pipeline/C_Pool.cpp">
+        <validLinenumbers>50</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="82" name="for.inc17.i" type="BlockType">
+      <controlInputObjs>for.inc.i</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.inc.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="k_load" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="1043341356" contextFuncName="C_flatten0" bitwidth="4" opcode="load" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="hs_1_load" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="1629498410" contextFuncName="C_flatten0" bitwidth="8" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="j_load" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="1629498410" contextFuncName="C_flatten0" bitwidth="3" opcode="load" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="hs_load" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="741941292" contextFuncName="C_flatten0" bitwidth="8" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="indvar_flatten325_load" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="539765310" contextFuncName="C_flatten0" bitwidth="7" opcode="load" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="i_load" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="539765310" contextFuncName="C_flatten0" bitwidth="3" opcode="load" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="indvars_iv378_load" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="539765310" contextFuncName="C_flatten0" bitwidth="8" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="add_ln50_1" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln50_1_fu_347_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="8" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.76" m_topoIndex="57" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="icmp_ln51" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="icmp_ln51_fu_186_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="C_flatten0" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.81" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="select_ln50" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln50_fu_353_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.39" m_topoIndex="58" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="select_ln50_1" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln50_1_fu_192_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="3" opcode="select" m_display="0" m_delay="0.2" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="select_ln50_2" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln50_2_fu_360_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="add_ln50_2" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln50_2_fu_200_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="3" opcode="add" m_display="0" m_delay="0.67" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="select_ln50_3" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln50_3_fu_206_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="3" opcode="select" m_display="0" m_delay="0.2" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="trunc_ln50" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="trunc_ln50_fu_214_p1" coreId="1633836900" contextFuncName="C_flatten0" bitwidth="2" opcode="trunc" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="xor_ln50" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="xor_ln50_fu_218_p2" coreName="LogicGate" implIndex="auto" control="no" opType="xor" coreId="74" contextFuncName="C_flatten0" bitwidth="1" opcode="xor" m_display="0" m_topoIndex="31" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="icmp_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="icmp_ln52_fu_224_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="C_flatten0" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.72" m_topoIndex="32" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="and_ln50" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="and_ln50_fu_230_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="C_flatten0" bitwidth="1" opcode="and" m_display="0" m_delay="0.28" m_topoIndex="33" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="select_ln50_4" lineNumber="50" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln50_4_fu_367_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.39" m_topoIndex="60" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="50" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="add_ln51" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln51_fu_236_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="3" opcode="add" m_display="0" m_delay="0.67" m_topoIndex="34" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="add_ln51_1" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln51_1_fu_374_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="8" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.76" m_topoIndex="61" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="select_ln51" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln51_fu_380_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.39" m_topoIndex="62" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="or_ln51" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="or_ln51_fu_242_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="C_flatten0" bitwidth="1" opcode="or" m_display="0" m_topoIndex="35" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="select_ln51_1" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln51_1_fu_248_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="4" opcode="select" m_display="0" m_delay="0.39" m_topoIndex="36" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="select_ln51_2" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln51_2_fu_256_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="3" opcode="select" m_display="0" m_delay="0.2" m_topoIndex="37" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="select_ln51_2_cast" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln51_2_cast_fu_264_p1" coreId="1013281633" contextFuncName="C_flatten0" bitwidth="7" opcode="zext" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="select_ln51_3" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln51_3_fu_387_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.39" m_topoIndex="63" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="hs_1_cast" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="hs_1_cast_fu_394_p1" coreId="1633836900" contextFuncName="C_flatten0" bitwidth="64" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="trunc_ln53" lineNumber="53" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="trunc_ln53_fu_268_p1" coreId="539768892" contextFuncName="C_flatten0" bitwidth="3" opcode="trunc" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="53" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="tmp14" lineNumber="53" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="tmp14_fu_272_p4" coreId="1013281633" contextFuncName="C_flatten0" bitwidth="7" opcode="bitconcatenate" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="53" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="add_ln53" lineNumber="53" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln53_fu_282_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="7" opcode="add" m_display="0" m_delay="0.77" m_topoIndex="41" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="53" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="zext_ln53" lineNumber="53" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="zext_ln53_fu_288_p1" coreId="1633836900" contextFuncName="C_flatten0" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="53" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="65" name="MaxPool_S4_V_addr" lineNumber="53" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="1633836900" contextFuncName="C_flatten0" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="53" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>MaxPool_S4_V</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="Flatten_V_addr" lineNumber="53" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="1633836900" contextFuncName="C_flatten0" bitwidth="7" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="65" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="53" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>Flatten_V</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="MaxPool_S4_V_load" lineNumber="53" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="83" contextFuncName="C_flatten0" bitwidth="16" opcode="load" nodeLatency="1" m_display="0" m_delay="1.23" m_topoIndex="44" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="53" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="Flatten_V_addr_write_ln53" lineNumber="53" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="83" contextFuncName="C_flatten0" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.23" m_topoIndex="66" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="53" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="add_ln54" lineNumber="54" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln54_fu_399_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="8" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.76" m_topoIndex="67" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="54" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="add_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln52_fu_293_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="4" opcode="add" m_display="0" m_delay="0.79" m_topoIndex="45" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="71" name="add_ln51_2" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="add_ln51_2_fu_299_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="C_flatten0" bitwidth="7" opcode="add" m_display="0" m_delay="0.77" m_topoIndex="46" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="select_ln51_4" lineNumber="51" fileName="pipeline/C_Pool.cpp" fileDirectory=".." rtlName="select_ln51_4_fu_305_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="C_flatten0" bitwidth="7" opcode="select" m_display="0" m_delay="0.36" m_topoIndex="47" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="51" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="indvar_flatten344_write_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="1633836900" contextFuncName="C_flatten0" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="48" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="indvars_iv378_write_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="1633836900" contextFuncName="C_flatten0" opcode="store" nodeLabel="1.0" m_display="0" m_delay="0.42" m_topoIndex="68" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="i_write_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="741683772" contextFuncName="C_flatten0" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="49" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="indvar_flatten325_write_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="741875756" contextFuncName="C_flatten0" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="50" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="77" name="hs_write_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="539765310" contextFuncName="C_flatten0" opcode="store" nodeLabel="1.0" m_display="0" m_delay="0.42" m_topoIndex="69" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="j_write_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="539765310" contextFuncName="C_flatten0" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="51" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="hs_1_write_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="741487420" contextFuncName="C_flatten0" opcode="store" nodeLabel="1.0" m_display="0" m_delay="0.42" m_topoIndex="70" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="k_write_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="1043341356" contextFuncName="C_flatten0" opcode="store" m_display="0" m_delay="0.42" m_topoIndex="52" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="br_ln52" lineNumber="52" fileName="pipeline/C_Pool.cpp" fileDirectory=".." coreId="925966380" contextFuncName="C_flatten0" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="71" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="pipeline/C_Pool.cpp" linenumber="52" fileDirectory="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project" functionName="C_flatten0"/>
+        <controlInputObjs>for.inc.i</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="pipeline/C_Pool.cpp">
+        <validLinenumbers>52</validLinenumbers>
+        <validLinenumbers>50</validLinenumbers>
+        <validLinenumbers>51</validLinenumbers>
+        <validLinenumbers>53</validLinenumbers>
+        <validLinenumbers>54</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <regnodes realName="indvars_iv378_reg_462">
+    <nodeIds>9</nodeIds>
+  </regnodes>
+  <regnodes realName="k_reg_420">
+    <nodeIds>3</nodeIds>
+  </regnodes>
+  <regnodes realName="hs_1_reg_427">
+    <nodeIds>4</nodeIds>
+  </regnodes>
+  <regnodes realName="and_ln50_reg_486">
+    <nodeIds>47</nodeIds>
+  </regnodes>
+  <regnodes realName="hs_reg_441">
+    <nodeIds>6</nodeIds>
+  </regnodes>
+  <regnodes realName="j_reg_434">
+    <nodeIds>5</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_455">
+    <nodeIds>8</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten344_reg_469">
+    <nodeIds>10</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten325_reg_448">
+    <nodeIds>7</nodeIds>
+  </regnodes>
+  <regnodes realName="MaxPool_S4_V_addr_reg_492">
+    <nodeIds>65</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln51_reg_479">
+    <nodeIds>37</nodeIds>
+  </regnodes>
+  <expressionNodes realName="hs_fu_72">
+    <nodeIds>6</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln50_fu_353">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln51_fu_236">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln52_fu_224">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln50_3_fu_206">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="hs_1_fu_64">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln50_fu_230">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_fu_80">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln54_fu_399">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvars_iv378_fu_84">
+    <nodeIds>9</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln53_fu_282">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="Flatten_V_addr_gep_fu_105">
+    <nodeIds>66</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln51_2_fu_256">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="MaxPool_S4_V_addr_gep_fu_92">
+    <nodeIds>65</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln50_fu_214">
+    <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln51_fu_380">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_fu_68">
+    <nodeIds>5</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln50_2_fu_360">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="hs_1_cast_fu_394">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln50_4_fu_367">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln51_2_cast_fu_264">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln50_2_fu_200">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln51_1_fu_374">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln51_1_fu_248">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln51_2_fu_299">
+    <nodeIds>71</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln53_fu_288">
+    <nodeIds>64</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln50_fu_168">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln51_4_fu_305">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln51_3_fu_387">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp14_fu_272">
+    <nodeIds>62</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten325_fu_76">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln52_fu_293">
+    <nodeIds>70</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln50_1_fu_192">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln53_fu_268">
+    <nodeIds>61</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln50_1_fu_347">
+    <nodeIds>36</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln50_fu_218">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln50_fu_162">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln51_fu_186">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln51_fu_242">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="k_fu_60">
+    <nodeIds>3</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten344_fu_88">
+    <nodeIds>10</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="hs_1_load_load_fu_338">
+    <nodeIds>28</nodeIds>
+  </ioNodes>
+  <ioNodes realName="j_load_load_fu_177">
+    <nodeIds>29</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln52_store_fu_323">
+    <nodeIds>76</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln52_store_fu_313">
+    <nodeIds>73</nodeIds>
+  </ioNodes>
+  <ioNodes realName="indvar_flatten325_load_load_fu_180">
+    <nodeIds>31</nodeIds>
+  </ioNodes>
+  <ioNodes realName="indvars_iv378_load_load_fu_344">
+    <nodeIds>33</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln52_store_fu_333">
+    <nodeIds>80</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln52_store_fu_410">
+    <nodeIds>77</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_129">
+    <nodeIds>13</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_139">
+    <nodeIds>15</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_119">
+    <nodeIds>11</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln52_store_fu_318">
+    <nodeIds>75</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_124">
+    <nodeIds>12</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_149">
+    <nodeIds>17</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln52_store_fu_415">
+    <nodeIds>79</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln52_store_fu_328">
+    <nodeIds>78</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln52_store_fu_405">
+    <nodeIds>74</nodeIds>
+  </ioNodes>
+  <ioNodes realName="i_load_load_fu_183">
+    <nodeIds>32</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_154">
+    <nodeIds>18</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_134">
+    <nodeIds>14</nodeIds>
+  </ioNodes>
+  <ioNodes realName="indvar_flatten344_load_load_fu_159">
+    <nodeIds>21</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_144">
+    <nodeIds>16</nodeIds>
+  </ioNodes>
+  <ioNodes realName="k_load_load_fu_174">
+    <nodeIds>27</nodeIds>
+  </ioNodes>
+  <ioNodes realName="hs_load_load_fu_341">
+    <nodeIds>30</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="Flatten_V">
+    <nodeIds>68</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="MaxPool_S4_V">
+    <nodeIds>67</nodeIds>
+  </memoryPorts>
+  <ioPorts name="Flatten_V(p0)">
+    <contents name="store">
+      <nodeIds>68</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="MaxPool_S4_V(p0)">
+    <contents name="load">
+      <nodeIds>67</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="67" stage="2" latency="2"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="80" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="2"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+      <operations id="81" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="C_CNN_Pipeline_VITIS_LOOP_50_1_VITIS_LOOP_51_2_VITIS_LOOP_52_3" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="130" mMaxLatency="130">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>20</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_50_1_VITIS_LOOP_51_2_VITIS_LOOP_52_3" mII="1" mDepth="2" mMinTripCount="128" mMaxTripCount="128" mMinLatency="128" mMaxLatency="128" mType="1">
+      <basicBlocks>26</basicBlocks>
+      <basicBlocks>82</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>84</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

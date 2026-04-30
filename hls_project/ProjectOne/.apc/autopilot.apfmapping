@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="inference_top.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\inference_top.cpp"/>
+    <originFiles name="common.h" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\common.h"/>
+    <originFiles name="D_Pool.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\D_Pool.cpp"/>
+    <originFiles name="D_Conv.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\D_Conv.cpp"/>
+    <originFiles name="D_CNN.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\D_CNN.cpp"/>
+    <originFiles name="C_Pool.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\C_Pool.cpp"/>
+    <originFiles name="C_Dense.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\C_Dense.cpp"/>
+    <originFiles name="C_Conv.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\C_Conv.cpp"/>
+    <originFiles name="C_CNN.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\C_CNN.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="tb_inference.cpp" path="D:\HOCTAP\CLAUDE\PROJECT_ONE\DoAn1\hls_project\pipeline\tb_inference.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
